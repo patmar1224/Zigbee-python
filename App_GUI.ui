@@ -1,0 +1,1384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>741</width>
+    <height>489</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(93, 107, 171);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(170, 170, 255);
+background-color: rgb(48, 48, 48);</string>
+   </property>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-10</y>
+      <width>741</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(93, 107, 171);</string>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="home">
+     <widget class="QPushButton" name="boton_luz">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>160</y>
+        <width>191</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bitstream Vera Sans Mono</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>BOMBILLA</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="boton_sensor">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>160</y>
+        <width>191</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bitstream Vera Sans Mono</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>SENSOR</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="sensor">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>20</y>
+        <width>491</width>
+        <height>461</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Monospace</family>
+        <stylestrategy>PreferDefault</stylestrategy>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(153, 153, 230);</string>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="datos_sensor">
+       <attribute name="title">
+        <string>Datos</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Ver datos</string>
+       </attribute>
+       <widget class="QLabel" name="texto_actualizar_auto">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>320</y>
+          <width>231</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monospace</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Tiempo actualización (s)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texto_presion">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>160</y>
+          <width>291</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monospace</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;PRESIÓN ATMOSFÉRICA (kPa)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texto_humedad">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>120</y>
+          <width>231</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monospace</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;HUMEDAD (%)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texto_humedad_dato">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>120</y>
+          <width>141</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 57 16pt &quot;Monoscape&quot;;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texto_bateria_dato">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>200</y>
+          <width>141</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monoscape</family>
+          <pointsize>16</pointsize>
+          <weight>7</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 57 16pt&quot;Monoscape&quot;;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texto_presion_dato">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>160</y>
+          <width>141</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monoscape</family>
+          <pointsize>16</pointsize>
+          <weight>7</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 57 16pt &quot;Monoscape&quot;;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texto_bateria">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>200</y>
+          <width>231</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monospace</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;BATERIA (%)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texto_temperatura_dato">
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>80</y>
+          <width>141</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monoscape</family>
+          <pointsize>16</pointsize>
+          <weight>7</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 57 16pt &quot;Monoscape&quot;;</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texto_temperatura">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>231</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monospace</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;TEMPERATURA (°C)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="tiempo_actualizacion_sensor">
+        <property name="geometry">
+         <rect>
+          <x>253</x>
+          <y>310</y>
+          <width>121</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monoespace</family>
+          <pointsize>14</pointsize>
+          <weight>9</weight>
+          <italic>true</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="cursor" stdset="0">
+         <cursorShape>IBeamCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+font: 75 italic 14pt &quot;Monoespace&quot;;</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="etiqueta_conexion">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>30</y>
+          <width>261</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monospace</family>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="boton_actualizar_datos_sensor">
+        <property name="geometry">
+         <rect>
+          <x>298</x>
+          <y>260</y>
+          <width>171</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bitstream Vera Sans</family>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+        </property>
+        <property name="text">
+         <string>Actualizar datos</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="boton_actualizar_datos_sensor_auto">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>310</y>
+          <width>81</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bitstream Vera Sans</family>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+        </property>
+        <property name="text">
+         <string>OK</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="texto_valido">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>360</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <zorder>texto_actualizar_auto</zorder>
+       <zorder>texto_presion</zorder>
+       <zorder>texto_humedad</zorder>
+       <zorder>texto_humedad_dato</zorder>
+       <zorder>texto_bateria_dato</zorder>
+       <zorder>texto_presion_dato</zorder>
+       <zorder>texto_bateria</zorder>
+       <zorder>texto_temperatura</zorder>
+       <zorder>tiempo_actualizacion_sensor</zorder>
+       <zorder>etiqueta_conexion</zorder>
+       <zorder>boton_actualizar_datos_sensor</zorder>
+       <zorder>boton_actualizar_datos_sensor_auto</zorder>
+       <zorder>texto_temperatura_dato</zorder>
+       <zorder>texto_valido</zorder>
+      </widget>
+      <widget class="QWidget" name="grafica_sensor">
+       <attribute name="title">
+        <string>Gráfica</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Ver gráfica</string>
+       </attribute>
+       <widget class="Grafica" name="grafica" native="true">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>-30</y>
+          <width>511</width>
+          <height>471</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tabla_sensor">
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <attribute name="title">
+        <string>Tabla</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Ver tabla</string>
+       </attribute>
+       <widget class="QPushButton" name="boton_borrar_tabla">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>390</y>
+          <width>99</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+        </property>
+        <property name="text">
+         <string>Borrar</string>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tabla_sensor_datos">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>1</y>
+          <width>491</width>
+          <height>381</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monospace</family>
+         </font>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>130</number>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>Fecha</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Hora</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Temperatura(°C)</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Humedad(%)</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Presión(kPa)</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Batería(%)</string>
+         </property>
+        </column>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="config_sensor">
+       <attribute name="title">
+        <string>Configuración</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Ver configuración</string>
+       </attribute>
+       <widget class="QPushButton" name="boton_anadir_sensor">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>90</y>
+          <width>141</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bitstream Vera Sans Mono</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+        </property>
+        <property name="text">
+         <string>CONECTAR</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="boton_borrar_sensor">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>200</y>
+          <width>141</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bitstream Vera Sans Mono</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+        </property>
+        <property name="text">
+         <string>BORRAR</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="boton_atras_sensor">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>99</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bitstream Vera Sans Mono</family>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>ATRÁS</string>
+      </property>
+     </widget>
+     <zorder>boton_atras_sensor</zorder>
+     <zorder>tabWidget</zorder>
+    </widget>
+    <widget class="QWidget" name="bombilla">
+     <widget class="QTabWidget" name="tabWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>10</y>
+        <width>491</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Monospace</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(153, 153, 230);</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="datos_luz">
+       <attribute name="title">
+        <string>Color</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Ver color</string>
+       </attribute>
+       <widget class="QSlider" name="brillo_slider">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>90</y>
+          <width>26</width>
+          <height>281</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>ClosedHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 255, 255, 255), stop:0.55 rgba(210, 210, 210, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QSlider" name="color_slider">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>90</y>
+          <width>26</width>
+          <height>281</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>ClosedHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 0, 0, 255), stop:0.166 rgba(255, 255, 0, 255), stop:0.333 rgba(0, 255, 0, 255), stop:0.5 rgba(0, 255, 255, 255), stop:0.666 rgba(0, 0, 255, 255), stop:0.833 rgba(255, 0, 255, 255), stop:1 rgba(255, 0, 0, 255));</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QSlider" name="satur_slider">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>90</y>
+          <width>26</width>
+          <height>281</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>ClosedHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 255, 255, 255), stop:0.55 rgba(210, 210, 210, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="etiqueta_brillo">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>40</y>
+          <width>81</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monospace</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>BRILLO</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="etiqueta_color">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>40</y>
+          <width>68</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monospace</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>COLOR</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="etiqueta_satur">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>40</y>
+          <width>101</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monospace</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>SATURACIÓN</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="valor_brillo">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>380</y>
+          <width>41</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="valor_color">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>380</y>
+          <width>51</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="valor_satur">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>380</y>
+          <width>41</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="blanca_luz">
+       <attribute name="title">
+        <string>Blanca</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Ver blanca</string>
+       </attribute>
+       <widget class="QSlider" name="brillo_blanco_slider">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>90</y>
+          <width>26</width>
+          <height>281</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>ClosedHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 255, 255, 255), stop:0.55 rgba(210, 210, 210, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QSlider" name="temp_slider">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>90</y>
+          <width>26</width>
+          <height>281</height>
+         </rect>
+        </property>
+        <property name="cursor">
+         <cursorShape>ClosedHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(255, 255, 71, 255), stop:0.55 rgba(217, 209, 255, 255), stop:0.98 rgba(0, 0, 225, 255), stop:1 rgba(0, 0, 0, 0));</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="etiqueta_brillo_blanco">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>40</y>
+          <width>81</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monospace</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>BRILLO</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="etiqueta_temp_blanco">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>40</y>
+          <width>111</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Monospace</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>TEMPERATURA</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="valor_brillo_blanco">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>380</y>
+          <width>41</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QLabel" name="valor_temp_blanco">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>380</y>
+          <width>41</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="config_luz">
+       <attribute name="title">
+        <string>Configuración</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Ver configuración</string>
+       </attribute>
+       <widget class="QPushButton" name="boton_borrar_bomb">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>220</y>
+          <width>141</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+        </property>
+        <property name="text">
+         <string>BORRAR</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="boton_anadir_bomb">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>110</y>
+          <width>141</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Bitstream Vera Sans Mono</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+        </property>
+        <property name="text">
+         <string>CONECTAR</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="boton_atras_luz">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>99</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bitstream Vera Sans Mono</family>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>ATRÁS</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="boton_bomb_on">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>419</y>
+        <width>51</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bitstream Vera Sans Mono</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>ON</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="boton_bomb_off">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>420</y>
+        <width>51</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bitstream Vera Sans Mono</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>OFF</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Grafica</class>
+   <extends>QWidget</extends>
+   <header>grafica.py</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
