@@ -12,7 +12,8 @@ from bombilla_ikea import *
 from datetime import datetime
 import datetime
 import matplotlib.dates as mdates
-import numpy as np 
+import numpy as np
+from nube_cayenne import *
 #from deconz_aqara_multisensor import (temperatura)
 #import qtawesome as qta
 
@@ -187,6 +188,9 @@ class ejemplo_GUI(QMainWindow):
             self.ui.texto_humedad_dato.setText(str(h))
             self.ui.texto_presion_dato.setText(str(p))
             self.ui.texto_bateria_dato.setText(b)
+            
+            #Valores de la nube
+            valor_nube(t,h,p,b)
             
             #Listar datos en la tabla 
             self.ui.array=[]
