@@ -67,7 +67,7 @@ La aplicación se ha desarrollado con QtDesigner. Para instalar el entorno gráf
 	sudo apt-get install pttools5-dev-tools 
 	pip install pyinstaller 
 
-#MyDevice cayenne
+# MyDevice cayenne
 MyDevice.com es una plataforma dondese subiran los datos de nuestra app en la nube, a la vez que podremos controlar el sensor y la bombilla desde ahí. Primero nos debemos de crear una cuenta en myDevices.com y desde ahí seguir todos los pasos. El URL de la página es el siguiente:
 https://accounts.mydevices.com/auth/realms/cayenne/protocol/openid-connect/auth?response_type=code&scope=email+profile&client_id=cayenne-web-app&state=5Os6WlKS3imyU0xcCTtRBT4CiLtndkUf2O7QUpFo&redirect_uri=https%3A%2F%2Fcayenne.mydevices.com%2Fauth%2Fcallback
 
