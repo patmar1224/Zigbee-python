@@ -53,7 +53,7 @@ Conexión del sensor Xiaomi Aqara Multi sensor WSDCGQ11LM (sensor de temperatura
 -Una vez se han introducido todos los comandos se debe de hacer un reinicio de la raspberry para que se apliquen los cambios.
 
 En caso de duda consultar la siguiente página:
-https://accounts.mydevices.com/auth/realms/cayenne/protocol/openid-connect/auth?response_type=code&scope=email+profile&client_id=cayenne-web-app&state=5Os6WlKS3imyU0xcCTtRBT4CiLtndkUf2O7QUpFo&redirect_uri=https%3A%2F%2Fcayenne.mydevices.com%2Fauth%2Fcallback
+https://phoscon.de/en/conbee2/install#raspbian 
 
 # Para el buen funcionamiento de la app
 Se deberá de añadir la IP de nuestra raspberry en los ficheros deconz_aqara_multisensor.py y bombilla_ikea.py
