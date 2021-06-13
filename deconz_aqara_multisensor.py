@@ -123,7 +123,7 @@ def getEnvSensorValues():
                 
             if dataSensor == sensorName[i] and dataSensorType == aqaraSensorTypeTemperature:
                 temperatura = (data[key]['state']['temperature'])/100
-                bateria = str(data[key]['config']['battery'])
+                bateria = (data[key]['config']['battery'])
 
             elif dataSensor == sensorName[i] and dataSensorType == aqaraSensorTypeHumidty:
                 humedad = (data[key]['state']['humidity'])/100
@@ -145,7 +145,7 @@ def getEnvSensorValues():
     global presion_arc
     presion_arc = "PRESIÓN ATMOSFÉRICA " + str(presion) + "kPa"
     global bat_arc
-    bat_arc = "BATERIA " + bateria + "%"
+    bat_arc = "BATERIA " + str(bateria) + "%"
     
     #crear_archivo(segundos, temperatura)
     
