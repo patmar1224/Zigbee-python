@@ -4,7 +4,6 @@
 #from urllib import request
 import json
 import requests 
-from datetime import datetime
 from pytz import timezone
 import os
 
@@ -199,7 +198,7 @@ def delete_bombilla():
 #hue(50000)
 #brillo(0)
 #apagar()
-#encender()
+
 #delete_bombilla()
 #conectar_bombilla()
 #getModelo_bombilla()

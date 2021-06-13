@@ -365,4 +365,7 @@ if __name__ == '__main__':
     bombilla_conectar = Bombilla_conectar()
     MedidaAutomatica = False
     App_prueba.show()
-    sys.exit(app.exec_())
+    app.exec_()
+    #sys.exit()
+    
+#bucle()
