@@ -1,0 +1,22 @@
+<RCC>
+  <qresource prefix="cct">
+    <file>business-and-money-icon-pack-91/bomb.png</file>
+    <file>business-and-money-icon-pack-91/sensorMarina.png</file>
+    <file>business-and-money-icon-pack-91/celulas.png</file>
+    <file>business-and-money-icon-pack-91/contenido.png</file>
+    <file>business-and-money-icon-pack-91/galeria.png</file>
+    <file>business-and-money-icon-pack-91/herramienta-termometro.png</file>
+    <file>business-and-money-icon-pack-91/grafico-de-lineas.png</file>
+    <file>business-and-money-icon-pack-91/iconmonstr-gear-thin-240.png</file>
+    <file>business-and-money-icon-pack-91/iconmonstr-idea-1-240.png</file>
+    <file>business-and-money-icon-pack-91/iconmonstr-arrow-68-240.png</file>
+    <file>business-and-money-icon-pack-91/iconmonstr-idea-2-240.png</file>
+    <file>business-and-money-icon-pack-91/iconmonstr-radio-tower-12-240.png</file>
+    <file>business-and-money-icon-pack-91/iconmonstr-reload-thin-240.png</file>
+    <file>business-and-money-icon-pack-91/iconmonstr-trash-can-30-240.png</file>
+    <file>business-and-money-icon-pack-91/kisspng-computer-icons-saturation-clip-art-5b2d502837d132.0254893715296962962286.png</file>
+    <file>business-and-money-icon-pack-91/iconmonstr-weather-2-240.png</file>
+    <file>business-and-money-icon-pack-91/paleta-de-pintura.png</file>
+    <file>business-and-money-icon-pack-91/sensor.png</file>
+  </qresource>
+</RCC>

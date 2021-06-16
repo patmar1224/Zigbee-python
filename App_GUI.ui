@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>991</width>
-    <height>637</height>
+    <width>1154</width>
+    <height>749</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,22 +26,22 @@ background-color: rgb(48, 48, 48);</string>
      <rect>
       <x>0</x>
       <y>-10</y>
-      <width>991</width>
-      <height>651</height>
+      <width>1161</width>
+      <height>761</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(93, 107, 171);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="home">
      <widget class="QPushButton" name="boton_luz">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>160</y>
+        <x>730</x>
+        <y>530</y>
         <width>191</width>
         <height>81</height>
        </rect>
@@ -85,12 +85,16 @@ QPushButton:pressed{
       <property name="text">
        <string>BOMBILLA</string>
       </property>
+      <property name="icon">
+       <iconset resource="logo.qrc">
+        <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-idea-2-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-idea-2-240.png</iconset>
+      </property>
      </widget>
      <widget class="QPushButton" name="boton_sensor">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>160</y>
+        <x>210</x>
+        <y>530</y>
         <width>191</width>
         <height>81</height>
        </rect>
@@ -134,7 +138,53 @@ QPushButton:pressed{
       <property name="text">
        <string>SENSOR</string>
       </property>
+      <property name="icon">
+       <iconset resource="logo.qrc">
+        <normaloff>:/cct/business-and-money-icon-pack-91/sensor.png</normaloff>:/cct/business-and-money-icon-pack-91/sensor.png</iconset>
+      </property>
      </widget>
+     <widget class="QFrame" name="frame_14">
+      <property name="geometry">
+       <rect>
+        <x>670</x>
+        <y>100</y>
+        <width>311</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/bomb.png);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_15">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>170</y>
+        <width>401</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/sensorMarina.png);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+     <zorder>boton_luz</zorder>
+     <zorder>frame_14</zorder>
+     <zorder>frame_15</zorder>
+     <zorder>boton_sensor</zorder>
     </widget>
     <widget class="QWidget" name="sensor">
      <widget class="QTabWidget" name="tabWidget">
@@ -143,10 +193,10 @@ QPushButton:pressed{
       </property>
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>280</x>
         <y>20</y>
-        <width>661</width>
-        <height>581</height>
+        <width>831</width>
+        <height>701</height>
        </rect>
       </property>
       <property name="font">
@@ -157,7 +207,8 @@ QPushButton:pressed{
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(153, 153, 230);</string>
+       <string notr="true">background-color: rgb(153, 153, 230);
+</string>
       </property>
       <property name="tabPosition">
        <enum>QTabWidget::North</enum>
@@ -166,7 +217,7 @@ QPushButton:pressed{
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="iconSize">
        <size>
@@ -190,8 +241,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_actualizar_auto">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>390</y>
+          <x>150</x>
+          <y>510</y>
           <width>301</width>
           <height>31</height>
          </rect>
@@ -208,8 +259,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_presion">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>160</y>
+          <x>90</x>
+          <y>240</y>
           <width>331</width>
           <height>22</height>
          </rect>
@@ -226,8 +277,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_humedad">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>120</y>
+          <x>90</x>
+          <y>200</y>
           <width>231</width>
           <height>22</height>
          </rect>
@@ -244,8 +295,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_humedad_dato">
         <property name="geometry">
          <rect>
-          <x>400</x>
-          <y>120</y>
+          <x>480</x>
+          <y>200</y>
           <width>141</width>
           <height>22</height>
          </rect>
@@ -263,8 +314,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_bateria_dato">
         <property name="geometry">
          <rect>
-          <x>400</x>
-          <y>200</y>
+          <x>480</x>
+          <y>280</y>
           <width>141</width>
           <height>22</height>
          </rect>
@@ -291,8 +342,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_presion_dato">
         <property name="geometry">
          <rect>
-          <x>400</x>
-          <y>160</y>
+          <x>480</x>
+          <y>240</y>
           <width>141</width>
           <height>22</height>
          </rect>
@@ -319,8 +370,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_bateria">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>200</y>
+          <x>90</x>
+          <y>280</y>
           <width>231</width>
           <height>22</height>
          </rect>
@@ -337,8 +388,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_temperatura_dato">
         <property name="geometry">
          <rect>
-          <x>400</x>
-          <y>80</y>
+          <x>480</x>
+          <y>160</y>
           <width>141</width>
           <height>22</height>
          </rect>
@@ -365,8 +416,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_temperatura">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>80</y>
+          <x>90</x>
+          <y>160</y>
           <width>231</width>
           <height>22</height>
          </rect>
@@ -384,8 +435,8 @@ QPushButton:pressed{
        <widget class="QTextEdit" name="tiempo_actualizacion_sensor">
         <property name="geometry">
          <rect>
-          <x>330</x>
-          <y>380</y>
+          <x>460</x>
+          <y>500</y>
           <width>121</width>
           <height>41</height>
          </rect>
@@ -410,8 +461,8 @@ font: 75 italic 14pt &quot;Monoespace&quot;;</string>
        <widget class="QLabel" name="etiqueta_conexion">
         <property name="geometry">
          <rect>
-          <x>200</x>
-          <y>30</y>
+          <x>300</x>
+          <y>70</y>
           <width>261</width>
           <height>22</height>
          </rect>
@@ -428,8 +479,8 @@ font: 75 italic 14pt &quot;Monoespace&quot;;</string>
        <widget class="QPushButton" name="boton_actualizar_datos_sensor">
         <property name="geometry">
          <rect>
-          <x>430</x>
-          <y>270</y>
+          <x>510</x>
+          <y>350</y>
           <width>181</width>
           <height>41</height>
          </rect>
@@ -472,12 +523,16 @@ QPushButton:pressed{
         <property name="text">
          <string>Actualizar datos</string>
         </property>
+        <property name="icon">
+         <iconset resource="logo.qrc">
+          <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-reload-thin-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-reload-thin-240.png</iconset>
+        </property>
        </widget>
        <widget class="QPushButton" name="boton_actualizar_datos_sensor_auto">
         <property name="geometry">
          <rect>
-          <x>470</x>
-          <y>380</y>
+          <x>600</x>
+          <y>500</y>
           <width>81</width>
           <height>41</height>
          </rect>
@@ -532,6 +587,25 @@ QPushButton:pressed{
          <string/>
         </property>
        </widget>
+       <widget class="QFrame" name="frame">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>91</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/contenido.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
        <zorder>texto_actualizar_auto</zorder>
        <zorder>texto_presion</zorder>
        <zorder>texto_humedad</zorder>
@@ -546,6 +620,7 @@ QPushButton:pressed{
        <zorder>boton_actualizar_datos_sensor_auto</zorder>
        <zorder>texto_temperatura_dato</zorder>
        <zorder>texto_valido</zorder>
+       <zorder>frame</zorder>
       </widget>
       <widget class="QWidget" name="grafica_sensor">
        <attribute name="title">
@@ -557,11 +632,30 @@ QPushButton:pressed{
        <widget class="Grafica" name="grafica" native="true">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>-30</y>
-          <width>661</width>
-          <height>571</height>
+          <x>140</x>
+          <y>10</y>
+          <width>681</width>
+          <height>651</height>
          </rect>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>120</width>
+          <height>111</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/grafico-de-lineas.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
         </property>
        </widget>
       </widget>
@@ -578,10 +672,10 @@ QPushButton:pressed{
        <widget class="QPushButton" name="boton_borrar_tabla">
         <property name="geometry">
          <rect>
-          <x>530</x>
-          <y>490</y>
+          <x>700</x>
+          <y>610</y>
           <width>99</width>
-          <height>30</height>
+          <height>41</height>
          </rect>
         </property>
         <property name="cursor">
@@ -615,14 +709,18 @@ QPushButton:pressed{
         <property name="text">
          <string>Borrar</string>
         </property>
+        <property name="icon">
+         <iconset resource="logo.qrc">
+          <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-trash-can-30-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-trash-can-30-240.png</iconset>
+        </property>
        </widget>
        <widget class="QTableWidget" name="tabla_sensor_datos">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>1</y>
-          <width>661</width>
-          <height>461</height>
+          <x>30</x>
+          <y>110</y>
+          <width>781</width>
+          <height>491</height>
          </rect>
         </property>
         <property name="font">
@@ -664,6 +762,25 @@ QPushButton:pressed{
          </property>
         </column>
        </widget>
+       <widget class="QFrame" name="frame_3">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>0</y>
+          <width>121</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/celulas.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="escena_sensor">
        <attribute name="title">
@@ -672,8 +789,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="etiqueta_elegir">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>80</y>
+          <x>210</x>
+          <y>120</y>
           <width>311</width>
           <height>41</height>
          </rect>
@@ -693,8 +810,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="etiqueta_temp_blanco_3">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>330</y>
+          <x>150</x>
+          <y>480</y>
           <width>111</width>
           <height>22</height>
          </rect>
@@ -714,8 +831,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="etiqueta_brillo_blanco_3">
         <property name="geometry">
          <rect>
-          <x>60</x>
-          <y>220</y>
+          <x>170</x>
+          <y>340</y>
           <width>81</width>
           <height>22</height>
          </rect>
@@ -735,8 +852,8 @@ QPushButton:pressed{
        <widget class="QSlider" name="brillo_blanco_slider_escena">
         <property name="geometry">
          <rect>
-          <x>200</x>
-          <y>220</y>
+          <x>310</x>
+          <y>340</y>
           <width>411</width>
           <height>26</height>
          </rect>
@@ -751,8 +868,8 @@ QPushButton:pressed{
        <widget class="QSlider" name="temp_slider_escena">
         <property name="geometry">
          <rect>
-          <x>200</x>
-          <y>330</y>
+          <x>300</x>
+          <y>480</y>
           <width>411</width>
           <height>26</height>
          </rect>
@@ -767,8 +884,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="valor_brillo_blanco_escena">
         <property name="geometry">
          <rect>
-          <x>360</x>
-          <y>260</y>
+          <x>480</x>
+          <y>310</y>
           <width>68</width>
           <height>22</height>
          </rect>
@@ -780,8 +897,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="valor_temp_brillo_escena">
         <property name="geometry">
          <rect>
-          <x>360</x>
-          <y>380</y>
+          <x>470</x>
+          <y>450</y>
           <width>81</width>
           <height>22</height>
          </rect>
@@ -793,8 +910,8 @@ QPushButton:pressed{
        <widget class="QDoubleSpinBox" name="Spinbox_escena">
         <property name="geometry">
          <rect>
-          <x>370</x>
-          <y>80</y>
+          <x>550</x>
+          <y>120</y>
           <width>161</width>
           <height>41</height>
          </rect>
@@ -824,8 +941,8 @@ QPushButton:pressed{
        <widget class="QCheckBox" name="checkBox_escena">
         <property name="geometry">
          <rect>
-          <x>440</x>
-          <y>430</y>
+          <x>540</x>
+          <y>580</y>
           <width>111</width>
           <height>27</height>
          </rect>
@@ -842,108 +959,99 @@ QPushButton:pressed{
          <string>ESCENA</string>
         </property>
        </widget>
-      </widget>
-      <widget class="QWidget" name="config_sensor">
-       <attribute name="title">
-        <string>Configuración</string>
-       </attribute>
-       <attribute name="toolTip">
-        <string>Ver configuración</string>
-       </attribute>
-       <widget class="QPushButton" name="boton_anadir_sensor">
+       <widget class="QFrame" name="frame_4">
         <property name="geometry">
          <rect>
-          <x>170</x>
-          <y>110</y>
-          <width>231</width>
-          <height>71</height>
+          <x>20</x>
+          <y>10</y>
+          <width>111</width>
+          <height>91</height>
          </rect>
         </property>
-        <property name="font">
-         <font>
-          <family>Bitstream Vera Sans Mono</family>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{
-	background-color: rgb(170, 170, 255);
-	border:none;
-	padding-top: 3px;
-	border-left: 3px solid rgb(62, 72, 115);
-	border-bottom: 4px solid rgb(62, 72, 115);
-}
-
-QPushButton:hover{
-	background-color: rgb(139, 139, 209);
-	border:none;
-	border-left: 3px solid rgb(62, 72, 115);
-	border-bottom: 6px solid rgb(62, 72, 115);
-}
-
-QPushButton:pressed{
-	background-color: rgb(139, 139, 209);
-	border:none;
-	border-left: 3px solid rgb(62, 72, 115);
-	border-top: 4px solid rgb(62, 72, 115);
-	padding-top: -3px;
-	border-bottom: none;
-}</string>
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/galeria.png);</string>
         </property>
-        <property name="text">
-         <string>CONECTAR</string>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
         </property>
        </widget>
-       <widget class="QPushButton" name="boton_borrar_sensor">
+       <widget class="QFrame" name="frame_5">
         <property name="geometry">
          <rect>
-          <x>170</x>
-          <y>300</y>
-          <width>231</width>
-          <height>71</height>
+          <x>90</x>
+          <y>320</y>
+          <width>61</width>
+          <height>51</height>
          </rect>
         </property>
-        <property name="font">
-         <font>
-          <family>Bitstream Vera Sans Mono</family>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/iconmonstr-weather-2-240.png);</string>
         </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_6">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>460</y>
+          <width>71</width>
+          <height>61</height>
+         </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{
-	background-color: rgb(170, 170, 255);
-	border:none;
-	padding-top: 3px;
-	border-left: 3px solid rgb(62, 72, 115);
-	border-bottom: 4px solid rgb(62, 72, 115);
-}
-
-QPushButton:hover{
-	background-color: rgb(139, 139, 209);
-	border:none;
-	border-left: 3px solid rgb(62, 72, 115);
-	border-bottom: 6px solid rgb(62, 72, 115);
-}
-
-QPushButton:pressed{
-	background-color: rgb(139, 139, 209);
-	border:none;
-	border-left: 3px solid rgb(62, 72, 115);
-	border-top: 4px solid rgb(62, 72, 115);
-	padding-top: -3px;
-	border-bottom: none;
-}</string>
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/herramienta-termometro.png);</string>
         </property>
-        <property name="text">
-         <string>BORRAR</string>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_7">
+        <property name="geometry">
+         <rect>
+          <x>300</x>
+          <y>270</y>
+          <width>51</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/iconmonstr-idea-1-240.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_8">
+        <property name="geometry">
+         <rect>
+          <x>680</x>
+          <y>270</y>
+          <width>61</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/iconmonstr-idea-2-240.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
         </property>
        </widget>
       </widget>
@@ -954,7 +1062,7 @@ QPushButton:pressed{
         <x>20</x>
         <y>20</y>
         <width>99</width>
-        <height>30</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -993,9 +1101,139 @@ QPushButton:pressed{
       <property name="text">
        <string>ATRÁS</string>
       </property>
+      <property name="icon">
+       <iconset resource="logo.qrc">
+        <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-arrow-68-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-arrow-68-240.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="boton_anadir_sensor">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>470</y>
+        <width>231</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bitstream Vera Sans Mono</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>CONECTAR</string>
+      </property>
+      <property name="icon">
+       <iconset resource="logo.qrc">
+        <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-radio-tower-12-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-radio-tower-12-240.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="boton_borrar_sensor">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>570</y>
+        <width>231</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bitstream Vera Sans Mono</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>BORRAR</string>
+      </property>
+      <property name="icon">
+       <iconset resource="logo.qrc">
+        <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-trash-can-30-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-trash-can-30-240.png</iconset>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_16">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>150</y>
+        <width>251</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/sensorMarina.png);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
      </widget>
      <zorder>boton_atras_sensor</zorder>
      <zorder>tabWidget</zorder>
+     <zorder>boton_anadir_sensor</zorder>
+     <zorder>boton_borrar_sensor</zorder>
+     <zorder>frame_16</zorder>
     </widget>
     <widget class="QWidget" name="bombilla">
      <widget class="QTabWidget" name="tabWidget_2">
@@ -1003,8 +1241,8 @@ QPushButton:pressed{
        <rect>
         <x>280</x>
         <y>20</y>
-        <width>661</width>
-        <height>581</height>
+        <width>841</width>
+        <height>711</height>
        </rect>
       </property>
       <property name="font">
@@ -1028,8 +1266,8 @@ QPushButton:pressed{
        <widget class="QSlider" name="brillo_slider">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>70</y>
+          <x>170</x>
+          <y>170</y>
           <width>26</width>
           <height>351</height>
          </rect>
@@ -1047,8 +1285,8 @@ QPushButton:pressed{
        <widget class="QSlider" name="color_slider">
         <property name="geometry">
          <rect>
-          <x>230</x>
-          <y>70</y>
+          <x>410</x>
+          <y>170</y>
           <width>26</width>
           <height>351</height>
          </rect>
@@ -1066,8 +1304,8 @@ QPushButton:pressed{
        <widget class="QSlider" name="satur_slider">
         <property name="geometry">
          <rect>
-          <x>400</x>
-          <y>70</y>
+          <x>650</x>
+          <y>170</y>
           <width>26</width>
           <height>351</height>
          </rect>
@@ -1085,8 +1323,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="etiqueta_brillo">
         <property name="geometry">
          <rect>
-          <x>60</x>
-          <y>40</y>
+          <x>160</x>
+          <y>140</y>
           <width>81</width>
           <height>22</height>
          </rect>
@@ -1106,8 +1344,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="etiqueta_color">
         <property name="geometry">
          <rect>
-          <x>220</x>
-          <y>40</y>
+          <x>400</x>
+          <y>140</y>
           <width>68</width>
           <height>22</height>
          </rect>
@@ -1126,8 +1364,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="etiqueta_satur">
         <property name="geometry">
          <rect>
-          <x>360</x>
-          <y>40</y>
+          <x>610</x>
+          <y>140</y>
           <width>101</width>
           <height>22</height>
          </rect>
@@ -1146,8 +1384,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="valor_brillo">
         <property name="geometry">
          <rect>
-          <x>60</x>
-          <y>450</y>
+          <x>160</x>
+          <y>550</y>
           <width>41</width>
           <height>22</height>
          </rect>
@@ -1159,8 +1397,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="valor_color">
         <property name="geometry">
          <rect>
-          <x>220</x>
-          <y>450</y>
+          <x>400</x>
+          <y>550</y>
           <width>51</width>
           <height>22</height>
          </rect>
@@ -1172,14 +1410,71 @@ QPushButton:pressed{
        <widget class="QLabel" name="valor_satur">
         <property name="geometry">
          <rect>
-          <x>390</x>
-          <y>450</y>
+          <x>640</x>
+          <y>550</y>
           <width>41</width>
           <height>22</height>
          </rect>
         </property>
         <property name="text">
          <string/>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_9">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>70</y>
+          <width>71</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/iconmonstr-weather-2-240.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_10">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>60</y>
+          <width>91</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/paleta-de-pintura.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_11">
+        <property name="geometry">
+         <rect>
+          <x>610</x>
+          <y>60</y>
+          <width>101</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/kisspng-computer-icons-saturation-clip-art-5b2d502837d132.0254893715296962962286.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
         </property>
        </widget>
       </widget>
@@ -1193,9 +1488,9 @@ QPushButton:pressed{
        <widget class="QSlider" name="brillo_blanco_slider">
         <property name="geometry">
          <rect>
-          <x>80</x>
-          <y>80</y>
-          <width>26</width>
+          <x>230</x>
+          <y>180</y>
+          <width>31</width>
           <height>351</height>
          </rect>
         </property>
@@ -1212,9 +1507,9 @@ QPushButton:pressed{
        <widget class="QSlider" name="temp_slider">
         <property name="geometry">
          <rect>
-          <x>260</x>
-          <y>80</y>
-          <width>26</width>
+          <x>490</x>
+          <y>180</y>
+          <width>31</width>
           <height>351</height>
          </rect>
         </property>
@@ -1231,8 +1526,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="etiqueta_brillo_blanco">
         <property name="geometry">
          <rect>
-          <x>60</x>
-          <y>40</y>
+          <x>220</x>
+          <y>140</y>
           <width>81</width>
           <height>22</height>
          </rect>
@@ -1252,8 +1547,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="etiqueta_temp_blanco">
         <property name="geometry">
          <rect>
-          <x>230</x>
-          <y>40</y>
+          <x>450</x>
+          <y>140</y>
           <width>111</width>
           <height>22</height>
          </rect>
@@ -1273,8 +1568,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="valor_brillo_blanco">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>450</y>
+          <x>220</x>
+          <y>550</y>
           <width>41</width>
           <height>22</height>
          </rect>
@@ -1286,8 +1581,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="valor_temp_blanco">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>450</y>
+          <x>470</x>
+          <y>550</y>
           <width>41</width>
           <height>22</height>
          </rect>
@@ -1296,107 +1591,42 @@ QPushButton:pressed{
          <string/>
         </property>
        </widget>
-      </widget>
-      <widget class="QWidget" name="config_luz">
-       <attribute name="title">
-        <string>Configuración</string>
-       </attribute>
-       <attribute name="toolTip">
-        <string>Ver configuración</string>
-       </attribute>
-       <widget class="QPushButton" name="boton_borrar_bomb">
+       <widget class="QFrame" name="frame_12">
         <property name="geometry">
          <rect>
-          <x>170</x>
-          <y>300</y>
-          <width>231</width>
-          <height>71</height>
+          <x>210</x>
+          <y>70</y>
+          <width>71</width>
+          <height>61</height>
          </rect>
         </property>
-        <property name="font">
-         <font>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{
-	background-color: rgb(170, 170, 255);
-	border:none;
-	padding-top: 3px;
-	border-left: 3px solid rgb(62, 72, 115);
-	border-bottom: 4px solid rgb(62, 72, 115);
-}
-
-QPushButton:hover{
-	background-color: rgb(139, 139, 209);
-	border:none;
-	border-left: 3px solid rgb(62, 72, 115);
-	border-bottom: 6px solid rgb(62, 72, 115);
-}
-
-QPushButton:pressed{
-	background-color: rgb(139, 139, 209);
-	border:none;
-	border-left: 3px solid rgb(62, 72, 115);
-	border-top: 4px solid rgb(62, 72, 115);
-	padding-top: -3px;
-	border-bottom: none;
-}</string>
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/iconmonstr-weather-2-240.png);</string>
         </property>
-        <property name="text">
-         <string>BORRAR</string>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
         </property>
        </widget>
-       <widget class="QPushButton" name="boton_anadir_bomb">
+       <widget class="QFrame" name="frame_13">
         <property name="geometry">
          <rect>
-          <x>170</x>
-          <y>110</y>
-          <width>231</width>
-          <height>71</height>
+          <x>460</x>
+          <y>70</y>
+          <width>81</width>
+          <height>61</height>
          </rect>
         </property>
-        <property name="font">
-         <font>
-          <family>Bitstream Vera Sans Mono</family>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton{
-	background-color: rgb(170, 170, 255);
-	border:none;
-	padding-top: 3px;
-	border-left: 3px solid rgb(62, 72, 115);
-	border-bottom: 4px solid rgb(62, 72, 115);
-}
-
-QPushButton:hover{
-	background-color: rgb(139, 139, 209);
-	border:none;
-	border-left: 3px solid rgb(62, 72, 115);
-	border-bottom: 6px solid rgb(62, 72, 115);
-}
-
-QPushButton:pressed{
-	background-color: rgb(139, 139, 209);
-	border:none;
-	border-left: 3px solid rgb(62, 72, 115);
-	border-top: 4px solid rgb(62, 72, 115);
-	padding-top: -3px;
-	border-bottom: none;
-}</string>
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/herramienta-termometro.png);</string>
         </property>
-        <property name="text">
-         <string>CONECTAR</string>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
         </property>
        </widget>
       </widget>
@@ -1407,7 +1637,7 @@ QPushButton:pressed{
         <x>30</x>
         <y>20</y>
         <width>99</width>
-        <height>30</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -1446,13 +1676,17 @@ QPushButton:pressed{
       <property name="text">
        <string>ATRÁS</string>
       </property>
+      <property name="icon">
+       <iconset resource="logo.qrc">
+        <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-reload-thin-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-reload-thin-240.png</iconset>
+      </property>
      </widget>
      <widget class="QPushButton" name="boton_bomb_on">
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>480</y>
-        <width>121</width>
+        <y>360</y>
+        <width>110</width>
         <height>51</height>
        </rect>
       </property>
@@ -1495,13 +1729,17 @@ QPushButton:pressed{
       <property name="text">
        <string>ON</string>
       </property>
+      <property name="icon">
+       <iconset resource="logo.qrc">
+        <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-idea-2-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-idea-2-240.png</iconset>
+      </property>
      </widget>
      <widget class="QPushButton" name="boton_bomb_off">
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>480</y>
-        <width>121</width>
+        <y>360</y>
+        <width>110</width>
         <height>51</height>
        </rect>
       </property>
@@ -1544,6 +1782,132 @@ QPushButton:pressed{
       <property name="text">
        <string>OFF</string>
       </property>
+      <property name="icon">
+       <iconset resource="logo.qrc">
+        <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-idea-1-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-idea-1-240.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="boton_anadir_bomb">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>470</y>
+        <width>231</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bitstream Vera Sans Mono</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>CONECTAR</string>
+      </property>
+      <property name="icon">
+       <iconset resource="logo.qrc">
+        <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-radio-tower-12-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-radio-tower-12-240.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="boton_borrar_bomb">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>570</y>
+        <width>231</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>BORRAR</string>
+      </property>
+      <property name="icon">
+       <iconset resource="logo.qrc">
+        <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-trash-can-30-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-trash-can-30-240.png</iconset>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_17">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>90</y>
+        <width>181</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/bomb.png);</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
      </widget>
     </widget>
    </widget>
@@ -1557,6 +1921,8 @@ QPushButton:pressed{
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="logo.qrc"/>
+ </resources>
  <connections/>
 </ui>
