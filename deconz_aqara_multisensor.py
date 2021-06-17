@@ -23,7 +23,7 @@ Query via deCONZ REST API
 ___version___ = 0.3
 
 # General Configuration
-deconzServerIPandPort = '192.168.0.29:80'
+deconzServerIPandPort = '192.168.1.109:80'
 deconzAPIKey = 'CC95679D0E' 
 
 # Static Sensor Information
@@ -188,10 +188,10 @@ def delete_sensor():
     d2 = requests.delete(url_delete2)
     d3 = requests.delete(url_delete3)
 
-def crear_archivo(tiempo, temperatura):
+def crear_archivo(pru):
     
-    file = open("/home/pi/Desktop/App_prueba/medida_temperatura.txt", "a")
-    file.write(tiempo + "," + temperatura + os.linesep)
+    file = open("/home/pi/Desktop/Zigbee-python/datos.txt", "a")
+    file.write(pru + os.linesep)
     file.close()
     
     return

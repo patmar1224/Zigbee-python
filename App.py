@@ -111,6 +111,28 @@ class ejemplo_GUI(QMainWindow):
         self.ui.timer=QTimer()
         self.ui.timer.timeout.connect(self.env_datos_sensor)
         
+        #Tabla
+        if os.stat("/home/pi/Desktop/Zigbee-python/datos_tabla.txt").st_size != 0:
+            tabla_datos = np.loadtxt("/home/pi/Desktop/Zigbee-python/datos_tabla.txt", delimiter = os.linesep, dtype="str")
+            print(tabla_datos.size)
+   
+            l = []
+            l.append(str(tabla_datos))
+        
+            fila=0
+            
+            if tabla_datos.size == 1:
+                tabla_datos = l
+                
+            for registro in tabla_datos:
+                columna=0
+                self.ui.tabla_sensor_datos.insertRow(fila)
+                for elemento in registro.split(" "):               
+                    celda=QTableWidgetItem(elemento)
+                    self.ui.tabla_sensor_datos.setItem(fila,columna,celda)
+                    columna+=1
+                fila+=1
+            
         #Pintar ejes de la grafica
         self.figura = self.ui.grafica.canvas.fig
         
@@ -215,7 +237,7 @@ class ejemplo_GUI(QMainWindow):
             self.ui.tabla_sensor_datos.removeRow(fila)
             self.ui.tabla_sensor_datos.removeRow(0)
             fila-=1
-    
+            
     def env_datos_sensor(self):
         print("Envio datos")
         model = getModelo()
@@ -244,10 +266,12 @@ class ejemplo_GUI(QMainWindow):
                     temperatura(temp_esc)
 #                 else:
 #                     apagar()
-            
             #Listar datos en la tabla 
             self.ui.array=[]
             self.ui.array.append((datetime.datetime.now().strftime("%d-%m-%Y"),datetime.datetime.now().strftime("%H:%M:%S"), str(t), str(h), str(p), str(b)))
+            
+            file = open("/home/pi/Desktop/Zigbee-python/datos_tabla.txt", "a")
+            np.savetxt(file, self.ui.array, delimiter = " ", fmt = "%s", newline = os.linesep)
             
             fila=0
             for registro in self.ui.array:
@@ -261,7 +285,6 @@ class ejemplo_GUI(QMainWindow):
                 
             #Graficar datos
             pr = [(datetime.datetime.now().strftime("%H:%M"))]
-            print(pr)
             x = [datetime.datetime.strptime(h, "%H:%M") for h in pr]
             
             self.ejes.scatter(x,h, c='blue', marker="X")

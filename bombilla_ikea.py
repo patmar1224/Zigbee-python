@@ -23,7 +23,7 @@ Query via deCONZ REST API
 ___version___ = 0.3
 
 # General Configuration
-deconzServerIPandPort = '192.168.0.29:80'
+deconzServerIPandPort = '192.168.1.109:80'
 deconzAPIKey = 'CC95679D0E' 
 
 # Static Sensor Information
