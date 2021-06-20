@@ -1,14 +1,7 @@
-#from json import loads
-#import urllib.request
-#from urllib import parse
-#from urllib import request
 import requests 
 from datetime import datetime
 from pytz import timezone
 import os
-
-#libreruas para los hilos
-import threading
 import time
 
 
@@ -36,9 +29,6 @@ aqaraSensorTypePressure = "ZHAPressure"
 # API URL
 url = 'http://' + deconzServerIPandPort + '/api/' + deconzAPIKey + '/sensors/'
 
-#temp_app = str(temperatura/100)
- 
-
 def conectar_sensor():
     
     res = requests.post(url).json()
@@ -50,7 +40,7 @@ def getAPIResult():
     """Function to get the REST API result needed from 'url'"""
 
     # Get data from REST API
-    restApiUrlOpen = requests.get(url, timeout=5).json()
+    restApiUrlOpen = requests.get(url, timeout=10).json()
     return restApiUrlOpen
 
 def getModelo():
@@ -70,7 +60,7 @@ def getModelo():
         else:
             modelo = 0
         
-        print(modelo)
+#         print(modelo)
     return modelo
             
     
@@ -147,8 +137,6 @@ def getEnvSensorValues():
     global bat_arc
     bat_arc = "BATERIA " + str(bateria) + "%"
     
-    #crear_archivo(segundos, temperatura)
-    
     print(datos_arc)
     print(temp_arc)
     print(humed_arc)
@@ -188,16 +176,41 @@ def delete_sensor():
     d2 = requests.delete(url_delete2)
     d3 = requests.delete(url_delete3)
 
-def crear_archivo(pru):
+def arc_nombre_sensores(datos):
     
-    file = open("/home/pi/Desktop/Zigbee-python/datos.txt", "a")
-    file.write(pru + os.linesep)
-    file.close()
-    
+    file = open("/home/pi/Desktop/Zigbee-python/lista_sensores.txt", "a")
+    file.write(datos + os.linesep)
+    #file.close()
     return
 
+def listar_sensor():
+    data_listar = getAPIResult()
+    file = open("/home/pi/Desktop/Zigbee-python/lista_sensores.txt", "w").close()
+    i=1
+    for key, value in data_listar.items():
+        sensor_names = data_listar[key]['name']
+        sensor_id = data_listar[key]['manufacturername']
+        sensor_model = data_listar[key]['modelid']
+        #sensor_version = data_listar[key]['swversion']
+        sensor_tipo = data_listar[key]['type']
+        sens = "-Sensor "+str(i)+"\nNombre:" +sensor_names + "\nFabricante:" + sensor_id + "\nTipo:" + sensor_tipo +  "\nModelo:" + sensor_model + "\n"#+ "\nVersión:" + sensor_version
+        print(sens)
+        i=i+1
+        arc_nombre_sensores(sens)
+        #leer_sensor()
+        
+    return
+
+def leer_sensor():
+    f = open("/home/pi/Desktop/Zigbee-python/lista_sensores.txt",'r')
+    datos = f.read()
+    datos = datos.split("\n")
+    print(datos)
+    f.close()
+    return datos
+#listar_sensor()
+#leer_sensor()
 # print(getModelo())
-# 
 # print(getEnvSensors())
 #conectar_sensor()
 

@@ -34,14 +34,14 @@ background-color: rgb(48, 48, 48);</string>
      <string notr="true">background-color: rgb(93, 107, 171);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="home">
      <widget class="QPushButton" name="boton_luz">
       <property name="geometry">
        <rect>
-        <x>730</x>
-        <y>530</y>
+        <x>720</x>
+        <y>430</y>
         <width>191</width>
         <height>81</height>
        </rect>
@@ -93,8 +93,8 @@ QPushButton:pressed{
      <widget class="QPushButton" name="boton_sensor">
       <property name="geometry">
        <rect>
-        <x>230</x>
-        <y>530</y>
+        <x>240</x>
+        <y>430</y>
         <width>191</width>
         <height>81</height>
        </rect>
@@ -146,8 +146,8 @@ QPushButton:pressed{
      <widget class="QFrame" name="frame_14">
       <property name="geometry">
        <rect>
-        <x>670</x>
-        <y>110</y>
+        <x>650</x>
+        <y>30</y>
         <width>291</width>
         <height>381</height>
        </rect>
@@ -165,8 +165,8 @@ QPushButton:pressed{
      <widget class="QFrame" name="frame_15">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>160</y>
+        <x>160</x>
+        <y>90</y>
         <width>341</width>
         <height>321</height>
        </rect>
@@ -181,10 +181,64 @@ QPushButton:pressed{
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
+     <widget class="QPushButton" name="boton_listar">
+      <property name="geometry">
+       <rect>
+        <x>720</x>
+        <y>630</y>
+        <width>341</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Bitstream Vera Sans Mono</family>
+        <pointsize>14</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	background-color: rgb(170, 170, 255);
+	border:none;
+	padding-top: 3px;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 4px solid rgb(62, 72, 115);
+}
+
+QPushButton:hover{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-bottom: 6px solid rgb(62, 72, 115);
+}
+
+QPushButton:pressed{
+	background-color: rgb(139, 139, 209);
+	border:none;
+	border-left: 3px solid rgb(62, 72, 115);
+	border-top: 4px solid rgb(62, 72, 115);
+	padding-top: -3px;
+	border-bottom: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>LISTAR DISPOSITIVOS</string>
+      </property>
+      <property name="icon">
+       <iconset resource="logo.qrc">
+        <normaloff>:/cct/business-and-money-icon-pack-91/sensor.png</normaloff>:/cct/business-and-money-icon-pack-91/sensor.png</iconset>
+      </property>
+     </widget>
      <zorder>boton_luz</zorder>
      <zorder>frame_14</zorder>
      <zorder>frame_15</zorder>
      <zorder>boton_sensor</zorder>
+     <zorder>boton_listar</zorder>
     </widget>
     <widget class="QWidget" name="sensor">
      <widget class="QTabWidget" name="tabWidget">

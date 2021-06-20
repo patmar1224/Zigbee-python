@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
         self.home = QtWidgets.QWidget()
         self.home.setObjectName("home")
         self.boton_luz = QtWidgets.QPushButton(self.home)
-        self.boton_luz.setGeometry(QtCore.QRect(730, 530, 191, 81))
+        self.boton_luz.setGeometry(QtCore.QRect(720, 430, 191, 81))
         font = QtGui.QFont()
         font.setFamily("Bitstream Vera Sans Mono")
         font.setPointSize(14)
@@ -60,7 +60,7 @@ class Ui_MainWindow(object):
         self.boton_luz.setIcon(icon)
         self.boton_luz.setObjectName("boton_luz")
         self.boton_sensor = QtWidgets.QPushButton(self.home)
-        self.boton_sensor.setGeometry(QtCore.QRect(230, 530, 191, 81))
+        self.boton_sensor.setGeometry(QtCore.QRect(240, 430, 191, 81))
         font = QtGui.QFont()
         font.setFamily("Bitstream Vera Sans Mono")
         font.setPointSize(14)
@@ -96,21 +96,56 @@ class Ui_MainWindow(object):
         self.boton_sensor.setIcon(icon1)
         self.boton_sensor.setObjectName("boton_sensor")
         self.frame_14 = QtWidgets.QFrame(self.home)
-        self.frame_14.setGeometry(QtCore.QRect(670, 110, 291, 381))
+        self.frame_14.setGeometry(QtCore.QRect(650, 30, 291, 381))
         self.frame_14.setStyleSheet("border-image: url(:/cct/business-and-money-icon-pack-91/bomb.png);")
         self.frame_14.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_14.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_14.setObjectName("frame_14")
         self.frame_15 = QtWidgets.QFrame(self.home)
-        self.frame_15.setGeometry(QtCore.QRect(140, 160, 341, 321))
+        self.frame_15.setGeometry(QtCore.QRect(160, 90, 341, 321))
         self.frame_15.setStyleSheet("border-image: url(:/cct/business-and-money-icon-pack-91/sensorMarina.png);")
         self.frame_15.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_15.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_15.setObjectName("frame_15")
+        self.boton_listar = QtWidgets.QPushButton(self.home)
+        self.boton_listar.setGeometry(QtCore.QRect(720, 630, 341, 51))
+        font = QtGui.QFont()
+        font.setFamily("Bitstream Vera Sans Mono")
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.boton_listar.setFont(font)
+        self.boton_listar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.boton_listar.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(170, 170, 255);\n"
+"    border:none;\n"
+"    padding-top: 3px;\n"
+"    border-left: 3px solid rgb(62, 72, 115);\n"
+"    border-bottom: 4px solid rgb(62, 72, 115);\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgb(139, 139, 209);\n"
+"    border:none;\n"
+"    border-left: 3px solid rgb(62, 72, 115);\n"
+"    border-bottom: 6px solid rgb(62, 72, 115);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(139, 139, 209);\n"
+"    border:none;\n"
+"    border-left: 3px solid rgb(62, 72, 115);\n"
+"    border-top: 4px solid rgb(62, 72, 115);\n"
+"    padding-top: -3px;\n"
+"    border-bottom: none;\n"
+"}")
+        self.boton_listar.setIcon(icon1)
+        self.boton_listar.setObjectName("boton_listar")
         self.boton_luz.raise_()
         self.frame_14.raise_()
         self.frame_15.raise_()
         self.boton_sensor.raise_()
+        self.boton_listar.raise_()
         self.stackedWidget.addWidget(self.home)
         self.sensor = QtWidgets.QWidget()
         self.sensor.setObjectName("sensor")
@@ -914,7 +949,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -924,6 +959,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.boton_luz.setText(_translate("MainWindow", "BOMBILLA"))
         self.boton_sensor.setText(_translate("MainWindow", "SENSOR"))
+        self.boton_listar.setText(_translate("MainWindow", "LISTAR DISPOSITIVOS"))
         self.texto_actualizar_auto.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">Tiempo actualización (s)</span></p></body></html>"))
         self.texto_presion.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">PRESIÓN ATMOSFÉRICA (kPa)</span></p></body></html>"))
         self.texto_humedad.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">HUMEDAD (%)</span></p></body></html>"))

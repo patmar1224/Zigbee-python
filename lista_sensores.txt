@@ -1,0 +1,24 @@
+-Sensor 1
+Nombre:Daylight
+Fabricante:Philips
+Tipo:Daylight
+Modelo:PHDL00
+
+-Sensor 2
+Nombre:Pressure 10
+Fabricante:LUMI
+Tipo:ZHAPressure
+Modelo:lumi.weather
+
+-Sensor 3
+Nombre:Temperature 8
+Fabricante:LUMI
+Tipo:ZHATemperature
+Modelo:lumi.weather
+
+-Sensor 4
+Nombre:Humidity 9
+Fabricante:LUMI
+Tipo:ZHAHumidity
+Modelo:lumi.weather
+

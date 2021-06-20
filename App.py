@@ -41,11 +41,12 @@ class ejemplo_GUI(QMainWindow):
         self.ui.boton_borrar_tabla.clicked.connect(self.borrar_tabla)
         self.ui.boton_bomb_on.clicked.connect(self.encender_bombilla)
         self.ui.boton_bomb_off.clicked.connect(self.apagar_bombilla)
+        self.ui.boton_listar.clicked.connect(self.listar)
         self.ui.checkBox_escena.stateChanged.connect(self.funcion_ModoAuto)
         self.ui.Spinbox_escena.editingFinished.connect(self.funcion_ModoAuto)
         self.ui.pantalla_conectar = Pantalla_conectar()
         self.ui.bombilla_conectar = Bombilla_conectar()
-        
+        self.ui.listar_dispositivos = Listar_dispositivos()
         #slider
         m = getModelo_bombilla()
         if m == "IKEA of Sweden":
@@ -124,7 +125,7 @@ class ejemplo_GUI(QMainWindow):
             if tabla_datos.size == 1:
                 tabla_datos = l
                 
-            for registro in tabla_datos:
+            for registro in reversed(tabla_datos):
                 columna=0
                 self.ui.tabla_sensor_datos.insertRow(fila)
                 for elemento in registro.split(" "):               
@@ -339,7 +340,10 @@ class ejemplo_GUI(QMainWindow):
         
     def borrar_bombilla(self):
         delete_bombilla()
-
+        
+    def listar(self):
+        self.ui.listar_dispositivos.exec_()
+        
 class Pantalla_conectar(QDialog):
     def __init__(self):
         super().__init__()
@@ -381,11 +385,20 @@ class Bombilla_conectar(QDialog):
             print(on_bomb)
             encender()
             
+class Listar_dispositivos(QDialog):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi ("Listar_dispositivos.ui", self)
+        
+        #self.list_sensores.setText(listar_sensor())
+        #self.list_bomb.setText(listar_bomb())
+        
 if __name__ == '__main__':
     app=QApplication(sys.argv) #Para abrir la aplicación
     App_prueba = ejemplo_GUI()
     pantalla_conectar = Pantalla_conectar()
     bombilla_conectar = Bombilla_conectar()
+    listar_dispositivos = Listar_dispositivos()
     MedidaAutomatica = False
     App_prueba.show()
     app.exec_()

@@ -1,0 +1,14 @@
+-Sensor 1
+Nombre:Configuration tool 1
+Fabricante:dresden elektronik
+Tipo:Configuration tool
+Modelo:ConBee II
+Versión:0x00000000
+
+-Sensor 2
+Nombre:Extended color light 2
+Fabricante:IKEA of Sweden
+Tipo:Extended color light
+Modelo:TRADFRI bulb E14 CWS 470lm
+Versión:1.0.021
+

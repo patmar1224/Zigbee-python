@@ -52,8 +52,28 @@ Conexión del sensor Xiaomi Aqara Multi sensor WSDCGQ11LM (sensor de temperatura
 
 -Una vez se han introducido todos los comandos se debe de hacer un reinicio de la raspberry para que se apliquen los cambios.
 
-En caso de duda consultar la siguiente página:
+-Instale el paquete de desarrollo deCONZ (opcional)
+
+	sudo apt install deconz-dev
+	
+-Obtenga y compile el complemento
+-Verifique el repositorio
+
+	git clone https://github.com/dresden-elektronik/deconz-rest-plugin.git
+	
+-Verifique la última versión
+
+	cd deconz-rest-plugin
+	git checkout -b mybranch HEAD
+	
+-Compila el complemento
+
+	qmake && make -j2
+
+
+En caso de duda consultar las siguientes página:
 https://phoscon.de/en/conbee2/install#raspbian 
+https://github.com/dresden-elektronik/deconz-rest-plugin
 
 # Para el buen funcionamiento de la app
 Se deberá de añadir la IP de nuestra raspberry en los ficheros deconz_aqara_multisensor.py y bombilla_ikea.py
