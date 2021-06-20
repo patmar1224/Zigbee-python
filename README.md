@@ -71,7 +71,7 @@ Conexión del sensor Xiaomi Aqara Multi sensor WSDCGQ11LM (sensor de temperatura
 	qmake && make -j2
 
 
-En caso de duda consultar las siguientes página:
+En caso de duda consultar las siguientes páginas:
 https://phoscon.de/en/conbee2/install#raspbian 
 https://github.com/dresden-elektronik/deconz-rest-plugin
 
