@@ -194,19 +194,19 @@ def listar_sensor():
         #sensor_version = data_listar[key]['swversion']
         sensor_tipo = data_listar[key]['type']
         sens = "-Sensor "+str(i)+"\nNombre:" +sensor_names + "\nFabricante:" + sensor_id + "\nTipo:" + sensor_tipo +  "\nModelo:" + sensor_model + "\n"#+ "\nVersión:" + sensor_version
-        print(sens)
+        #print(sens)
         i=i+1
         arc_nombre_sensores(sens)
         #leer_sensor()
-        
-    return
+    with open("/home/pi/Desktop/Zigbee-python/lista_sensores.txt",'r') as file:
+        datos = file.read()
+    
+    return datos
 
 def leer_sensor():
-    f = open("/home/pi/Desktop/Zigbee-python/lista_sensores.txt",'r')
-    datos = f.read()
-    datos = datos.split("\n")
-    print(datos)
-    f.close()
+    with open("/home/pi/Desktop/Zigbee-python/lista_sensores.txt",'r') as file:
+        datos = file.read()
+    
     return datos
 #listar_sensor()
 #leer_sensor()

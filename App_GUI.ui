@@ -34,7 +34,7 @@ background-color: rgb(48, 48, 48);</string>
      <string notr="true">background-color: rgb(93, 107, 171);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="home">
      <widget class="QPushButton" name="boton_luz">
@@ -231,7 +231,7 @@ QPushButton:pressed{
       </property>
       <property name="icon">
        <iconset resource="logo.qrc">
-        <normaloff>:/cct/business-and-money-icon-pack-91/sensor.png</normaloff>:/cct/business-and-money-icon-pack-91/sensor.png</iconset>
+        <normaloff>:/cct/business-and-money-icon-pack-91/mbrisearch_99556.png</normaloff>:/cct/business-and-money-icon-pack-91/mbrisearch_99556.png</iconset>
       </property>
      </widget>
      <zorder>boton_luz</zorder>
@@ -295,8 +295,8 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_actualizar_auto">
         <property name="geometry">
          <rect>
-          <x>150</x>
-          <y>510</y>
+          <x>160</x>
+          <y>490</y>
           <width>301</width>
           <height>31</height>
          </rect>
@@ -313,7 +313,7 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_presion">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>220</x>
           <y>240</y>
           <width>331</width>
           <height>22</height>
@@ -331,7 +331,7 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_humedad">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>220</x>
           <y>200</y>
           <width>231</width>
           <height>22</height>
@@ -349,7 +349,7 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_humedad_dato">
         <property name="geometry">
          <rect>
-          <x>550</x>
+          <x>620</x>
           <y>190</y>
           <width>141</width>
           <height>22</height>
@@ -368,7 +368,7 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_bateria_dato">
         <property name="geometry">
          <rect>
-          <x>550</x>
+          <x>620</x>
           <y>270</y>
           <width>141</width>
           <height>22</height>
@@ -396,7 +396,7 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_presion_dato">
         <property name="geometry">
          <rect>
-          <x>550</x>
+          <x>620</x>
           <y>230</y>
           <width>141</width>
           <height>22</height>
@@ -424,7 +424,7 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_bateria">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>220</x>
           <y>280</y>
           <width>231</width>
           <height>22</height>
@@ -442,7 +442,7 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_temperatura_dato">
         <property name="geometry">
          <rect>
-          <x>550</x>
+          <x>620</x>
           <y>150</y>
           <width>141</width>
           <height>22</height>
@@ -470,7 +470,7 @@ QPushButton:pressed{
        <widget class="QLabel" name="texto_temperatura">
         <property name="geometry">
          <rect>
-          <x>150</x>
+          <x>220</x>
           <y>160</y>
           <width>231</width>
           <height>22</height>
@@ -489,8 +489,8 @@ QPushButton:pressed{
        <widget class="QTextEdit" name="tiempo_actualizacion_sensor">
         <property name="geometry">
          <rect>
-          <x>460</x>
-          <y>500</y>
+          <x>470</x>
+          <y>480</y>
           <width>121</width>
           <height>41</height>
          </rect>
@@ -515,7 +515,7 @@ font: 75 italic 14pt &quot;Monoespace&quot;;</string>
        <widget class="QLabel" name="etiqueta_conexion">
         <property name="geometry">
          <rect>
-          <x>470</x>
+          <x>540</x>
           <y>90</y>
           <width>261</width>
           <height>22</height>
@@ -533,7 +533,7 @@ font: 75 italic 14pt &quot;Monoespace&quot;;</string>
        <widget class="QPushButton" name="boton_actualizar_datos_sensor">
         <property name="geometry">
          <rect>
-          <x>510</x>
+          <x>590</x>
           <y>350</y>
           <width>181</width>
           <height>41</height>
@@ -585,8 +585,8 @@ QPushButton:pressed{
        <widget class="QPushButton" name="boton_actualizar_datos_sensor_auto">
         <property name="geometry">
          <rect>
-          <x>600</x>
-          <y>500</y>
+          <x>610</x>
+          <y>480</y>
           <width>81</width>
           <height>41</height>
          </rect>
@@ -660,6 +660,82 @@ QPushButton:pressed{
          <enum>QFrame::Raised</enum>
         </property>
        </widget>
+       <widget class="QFrame" name="frame_18">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>190</y>
+          <width>51</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/humidity_weather_icon_129724.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_19">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>230</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/pressure_4667.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_20">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>270</y>
+          <width>41</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/battery-power_icon-icons.com_54054.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+       <widget class="QFrame" name="frame_21">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>150</y>
+          <width>51</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-image: url(:/cct/business-and-money-icon-pack-91/thermometer-temperature-control-tool-weather-interface-symbol_icon-icons.com_54635.png);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
        <zorder>texto_actualizar_auto</zorder>
        <zorder>texto_presion</zorder>
        <zorder>texto_humedad</zorder>
@@ -675,6 +751,10 @@ QPushButton:pressed{
        <zorder>texto_temperatura_dato</zorder>
        <zorder>texto_valido</zorder>
        <zorder>frame</zorder>
+       <zorder>frame_18</zorder>
+       <zorder>frame_19</zorder>
+       <zorder>frame_20</zorder>
+       <zorder>frame_21</zorder>
       </widget>
       <widget class="QWidget" name="grafica_sensor">
        <attribute name="title">

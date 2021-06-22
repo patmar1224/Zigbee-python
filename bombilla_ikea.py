@@ -208,8 +208,11 @@ def listar_bomb():
         #print(bomb)
         i=i+1
         arc_nombre_luces(bomb)
+        
+    with open("/home/pi/Desktop/Zigbee-python/lista_luces.txt",'r') as file:
+        datos = file.read()
 
-    return
+    return datos
 
 #listar_bomb()
 #getModelo_bombilla()

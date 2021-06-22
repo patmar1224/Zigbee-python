@@ -31,6 +31,8 @@ subscribe_temp = 'v1/' + user + '/things/' + client_id + '/cmd/7'
 publish_color = 'v1/' + user + '/things/' + client_id + '/data/8' #Barra color
 subscribe_color = 'v1/' + user + '/things/' + client_id + '/cmd/8'
 
+publish_act = 'v1/' + user + '/things/' + client_id + '/digital/10' #Barra color
+subscribe_act = 'v1/' + user + '/things/' + client_id + '/cmd/10'
 
 def valor_nube(t,h,p,b):
     client.publish(publish_0,t)
@@ -38,12 +40,12 @@ def valor_nube(t,h,p,b):
     client.publish(publish_2,p)
     client.publish(publish_3,b)
 
-def mensagens(client, userdata, msg): 
+def mensagens(client, userdata, msg):
+    #client.publish(publish_boton,1)
     m = msg.topic.split('/')
     p = msg.payload.decode().split(',')
     print(m)
     print(p)
-    
     channel = m[5]
     
     print(p[1])
@@ -54,6 +56,7 @@ def mensagens(client, userdata, msg):
     elif channel == '2':
         if p[1] == '1':
             encender()
+            
         else:
             apagar()
             
@@ -66,8 +69,7 @@ def mensagens(client, userdata, msg):
         
     elif channel == '8':
         hue(int(p[1]))
-            
-   # print(p[1])
+        
 #     p[1]=1
      
 #     print(p[1])
@@ -78,12 +80,15 @@ client = mqtt.Client(client_id)
 client.username_pw_set(user, password)
 client.connect(server, port)
 
+
+
 client.on_message = mensagens
 client.subscribe(subscribe_slider)
 client.subscribe(subscribe_boton)
 client.subscribe(subscribe_color)
 client.subscribe(subscribe_temp)
 client.subscribe(subscribe_sat)
+client.subscribe(subscribe_act)
 
 client.loop_start()
 

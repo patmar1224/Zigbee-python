@@ -136,10 +136,13 @@ class ejemplo_GUI(QMainWindow):
             
         #Pintar ejes de la grafica
         self.figura = self.ui.grafica.canvas.fig
-        
+                
         #Valores del eje X en horas
         x = ["00:00", "02:00", "04:00", "06:00", "08:00", "10:00", "12:00","14:00", "16:00", "18:00", "20:00", "22:00", "23:59"]
         dates_graf = [datetime.datetime.strptime(h, "%H:%M") for h in x]
+        
+        
+        
         
         #Añadir las graficas que quiero
         self.ejes=self.figura.add_subplot(312)
@@ -240,7 +243,12 @@ class ejemplo_GUI(QMainWindow):
             fila-=1
             
     def env_datos_sensor(self):
-        print("Envio datos")
+        global contador
+        global fecha_ant
+        global temp_ant
+        global hum_ant
+        global presion_ant
+        
         model = getModelo()
         print(model)
         
@@ -288,9 +296,24 @@ class ejemplo_GUI(QMainWindow):
             pr = [(datetime.datetime.now().strftime("%H:%M"))]
             x = [datetime.datetime.strptime(h, "%H:%M") for h in pr]
             
-            self.ejes.scatter(x,h, c='blue', marker="X")
-            self.ejes2.scatter(x,t, c='red', marker="D")
-            self.ejes3.scatter(x,p, c='grey', marker="^")
+            if contador == 0:
+                self.ejes.scatter(x,h, c='blue', marker="X")
+                self.ejes2.scatter(x,t, c='red', marker="D")
+                self.ejes3.scatter(x,p, c='grey', marker="^")
+            
+            else:
+                self.ejes.scatter(x,h, c='blue', marker="X")
+                self.ejes2.scatter(x,t, c='red', marker="D")
+                self.ejes3.scatter(x,p, c='grey', marker="^")
+                self.ejes.errorbar([fecha_ant, x], [hum_ant,h])
+                self.ejes2.errorbar([fecha_ant, x], [temp_ant,t])
+                self.ejes3.errorbar([fecha_ant, x], [presion_ant,p])
+                
+            contador = 1
+            fecha_ant = x
+            temp_ant = t
+            hum_ant = h
+            presion_ant = p
             
             self.ui.grafica.canvas.draw()
           
@@ -390,8 +413,8 @@ class Listar_dispositivos(QDialog):
         super().__init__()
         uic.loadUi ("Listar_dispositivos.ui", self)
         
-        #self.list_sensores.setText(listar_sensor())
-        #self.list_bomb.setText(listar_bomb())
+        self.list_sensores.setText(listar_sensor())
+        self.list_bomb.setText(listar_bomb())
         
 if __name__ == '__main__':
     app=QApplication(sys.argv) #Para abrir la aplicación
@@ -400,6 +423,11 @@ if __name__ == '__main__':
     bombilla_conectar = Bombilla_conectar()
     listar_dispositivos = Listar_dispositivos()
     MedidaAutomatica = False
+    contador  = 0
+    fecha_ant = 0
+    temp_ant = 0
+    hum_ant = 0
+    presion_ant = 0
     App_prueba.show()
     app.exec_()
     #sys.exit()

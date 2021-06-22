@@ -1,5 +1,13 @@
 <RCC>
   <qresource prefix="cct">
+    <file>business-and-money-icon-pack-91/thermometer-temperature-control-tool-weather-interface-symbol_icon-icons.com_54635.png</file>
+    <file>business-and-money-icon-pack-91/battery-power_icon-icons.com_54054.png</file>
+    <file>business-and-money-icon-pack-91/herramienta-termometro.png</file>
+    <file>business-and-money-icon-pack-91/humidity_weather_icon_129724.png</file>
+    <file>business-and-money-icon-pack-91/icons8-zigbee-48.png</file>
+    <file>business-and-money-icon-pack-91/mbrisearch_99556.png</file>
+    <file>business-and-money-icon-pack-91/zigbee_icon_136005.png</file>
+    <file>business-and-money-icon-pack-91/pressure_4667.png</file>
     <file>business-and-money-icon-pack-91/bomb.png</file>
     <file>business-and-money-icon-pack-91/sensorMarina.png</file>
     <file>business-and-money-icon-pack-91/celulas.png</file>
