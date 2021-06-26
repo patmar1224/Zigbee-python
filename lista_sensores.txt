@@ -5,20 +5,20 @@ Tipo:Daylight
 Modelo:PHDL00
 
 -Sensor 2
-Nombre:Pressure 10
-Fabricante:LUMI
-Tipo:ZHAPressure
-Modelo:lumi.weather
-
--Sensor 3
-Nombre:Temperature 8
+Nombre:Temperature 11
 Fabricante:LUMI
 Tipo:ZHATemperature
 Modelo:lumi.weather
 
--Sensor 4
-Nombre:Humidity 9
+-Sensor 3
+Nombre:Humidity 12
 Fabricante:LUMI
 Tipo:ZHAHumidity
+Modelo:lumi.weather
+
+-Sensor 4
+Nombre:Pressure 13
+Fabricante:LUMI
+Tipo:ZHAPressure
 Modelo:lumi.weather
 

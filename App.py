@@ -1,18 +1,17 @@
 import sys
-from PyQt5 import uic #Carga la aplicación del Qt designer
+from PyQt5 import uic, QtGui, QtCore, QtWidgets #Carga la aplicación del Qt designer
 from PyQt5.QtWidgets import QMainWindow, QApplication, QDialog, QMessageBox, QTableWidgetItem #Para cargar la aplicación
 from PyQt5.QtGui import QCursor
-from PyQt5 import QtGui, QtCore
 from PyQt5.QtCore import QTimer
 from App_GUI import Ui_MainWindow
-from PyQt5 import QtGui, QtCore, QtWidgets
-import matplotlib.pyplot as plt
 from deconz_aqara_multisensor import *
 from bombilla_ikea import *
+from datetime import datetime
 import datetime
 import matplotlib.dates as mdates
 import numpy as np
 from nube_cayenne import *
+import pandas as pd
 #import qtawesome as qta
 
 
@@ -40,11 +39,12 @@ class ejemplo_GUI(QMainWindow):
         self.ui.boton_borrar_tabla.clicked.connect(self.borrar_tabla)
         self.ui.boton_bomb_on.clicked.connect(self.encender_bombilla)
         self.ui.boton_bomb_off.clicked.connect(self.apagar_bombilla)
+        self.ui.boton_listar.clicked.connect(self.listar)
         self.ui.checkBox_escena.stateChanged.connect(self.funcion_ModoAuto)
         self.ui.Spinbox_escena.editingFinished.connect(self.funcion_ModoAuto)
         self.ui.pantalla_conectar = Pantalla_conectar()
         self.ui.bombilla_conectar = Bombilla_conectar()
-        
+        self.ui.listar_dispositivos = Listar_dispositivos()
         #slider
         m = getModelo_bombilla()
         if m == "IKEA of Sweden":
@@ -110,8 +110,30 @@ class ejemplo_GUI(QMainWindow):
         self.ui.timer=QTimer()
         self.ui.timer.timeout.connect(self.env_datos_sensor)
         
+        #Tabla
+        if os.stat("/home/pi/Desktop/Zigbee-python/datos_tabla.txt").st_size != 0:
+            tabla_datos = np.loadtxt("/home/pi/Desktop/Zigbee-python/datos_tabla.txt", delimiter = os.linesep, dtype="str")
+            print(tabla_datos.size)
+   
+            l = []
+            l.append(str(tabla_datos))
+        
+            fila=0
+            
+            if tabla_datos.size == 1:
+                tabla_datos = l
+                
+            for registro in reversed(tabla_datos):
+                columna=0
+                self.ui.tabla_sensor_datos.insertRow(fila)
+                for elemento in registro.split(" "):               
+                    celda=QTableWidgetItem(elemento)
+                    self.ui.tabla_sensor_datos.setItem(fila,columna,celda)
+                    columna+=1
+                fila+=1
+            
         #Pintar ejes de la grafica
-        self.figura = self.ui.grafica.canvas.fig
+        self.figura = self.ui.grafica.canvas.fig       
         
         #Valores del eje X en horas
         x = ["00:00", "02:00", "04:00", "06:00", "08:00", "10:00", "12:00","14:00", "16:00", "18:00", "20:00", "22:00", "23:59"]
@@ -208,15 +230,21 @@ class ejemplo_GUI(QMainWindow):
             saturacion(int(value))
         
     def borrar_tabla(self):
+        file = open("/home/pi/Desktop/Zigbee-python/datos_tabla.txt", "w").close() #Borro el fichero .txt donde guardo las medidas para que al principio me las saque en la tabla
         self.ui.tabla_sensor_datos.clearContents()
         fila=self.ui.tabla_sensor_datos.rowCount()
         for fila in range (-1, self.ui.tabla_sensor_datos.rowCount()):
             self.ui.tabla_sensor_datos.removeRow(fila)
             self.ui.tabla_sensor_datos.removeRow(0)
             fila-=1
-    
+            
     def env_datos_sensor(self):
-        print("Envio datos")
+        global contador
+        global fecha_ant
+        global temp_ant
+        global hum_ant
+        global presion_ant
+        
         model = getModelo()
         print(model)
         
@@ -243,10 +271,12 @@ class ejemplo_GUI(QMainWindow):
                     temperatura(temp_esc)
 #                 else:
 #                     apagar()
-            
             #Listar datos en la tabla 
             self.ui.array=[]
             self.ui.array.append((datetime.datetime.now().strftime("%d-%m-%Y"),datetime.datetime.now().strftime("%H:%M:%S"), str(t), str(h), str(p), str(b)))
+            
+            file = open("/home/pi/Desktop/Zigbee-python/datos_tabla.txt", "a")
+            np.savetxt(file, self.ui.array, delimiter = " ", fmt = "%s", newline = os.linesep)
             
             fila=0
             for registro in self.ui.array:
@@ -260,12 +290,26 @@ class ejemplo_GUI(QMainWindow):
                 
             #Graficar datos
             pr = [(datetime.datetime.now().strftime("%H:%M"))]
-            print(pr)
             x = [datetime.datetime.strptime(h, "%H:%M") for h in pr]
             
-            self.ejes.scatter(x,h, c='blue', marker="X")
-            self.ejes2.scatter(x,t, c='red', marker="D")
-            self.ejes3.scatter(x,p, c='grey', marker="^")
+            if contador == 0:
+                self.ejes.scatter(x,h, c='blue', marker="X")
+                self.ejes2.scatter(x,t, c='red', marker="D")
+                self.ejes3.scatter(x,p, c='grey', marker="^")
+            
+            else:
+                self.ejes.scatter(x,h, c='blue', marker="X")
+                self.ejes2.scatter(x,t, c='red', marker="D")
+                self.ejes3.scatter(x,p, c='grey', marker="^")
+                self.ejes.errorbar([fecha_ant, x], [hum_ant,h], color = 'blue')
+                self.ejes2.errorbar([fecha_ant, x], [temp_ant,t], color = 'red')
+                self.ejes3.errorbar([fecha_ant, x], [presion_ant,p], color = 'grey')
+                
+            contador = 1
+            fecha_ant = x
+            temp_ant = t
+            hum_ant = h
+            presion_ant = p
             
             self.ui.grafica.canvas.draw()
           
@@ -315,7 +359,10 @@ class ejemplo_GUI(QMainWindow):
         
     def borrar_bombilla(self):
         delete_bombilla()
-
+        
+    def listar(self):
+        self.ui.listar_dispositivos.exec_()
+        
 class Pantalla_conectar(QDialog):
     def __init__(self):
         super().__init__()
@@ -357,11 +404,28 @@ class Bombilla_conectar(QDialog):
             print(on_bomb)
             encender()
             
+class Listar_dispositivos(QDialog):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi ("Listar_dispositivos.ui", self)
+        
+        self.list_sensores.setText(listar_sensor())
+        self.list_bomb.setText(listar_bomb())
+        
 if __name__ == '__main__':
     app=QApplication(sys.argv) #Para abrir la aplicación
     App_prueba = ejemplo_GUI()
     pantalla_conectar = Pantalla_conectar()
     bombilla_conectar = Bombilla_conectar()
+    listar_dispositivos = Listar_dispositivos()
     MedidaAutomatica = False
+    contador  = 0
+    fecha_ant = 0
+    temp_ant = 0
+    hum_ant = 0
+    presion_ant = 0
     App_prueba.show()
-    sys.exit(app.exec_())
+    app.exec_()
+    #sys.exit()
+    
+#bucle()
