@@ -4,6 +4,7 @@
 #from urllib import request
 import json
 import requests 
+from datetime import datetime
 from pytz import timezone
 import os
 
@@ -23,7 +24,7 @@ Query via deCONZ REST API
 ___version___ = 0.3
 
 # General Configuration
-deconzServerIPandPort = '192.168.1.109:80'
+deconzServerIPandPort = '192.168.0.29:80'
 deconzAPIKey = 'CC95679D0E' 
 
 # Static Sensor Information
@@ -47,7 +48,7 @@ def getAPIResult_bombilla():
     """Function to get the REST API result needed from 'url'"""
 
     # Get data from REST API
-    restApiUrlOpen = requests.get(url, timeout=10).json()
+    restApiUrlOpen = requests.get(url, timeout=5).json()
     return restApiUrlOpen
 
 def getModelo_bombilla():
@@ -67,7 +68,7 @@ def getModelo_bombilla():
         else:
             modelo = 0
   
-    #print(modelo)
+    print(modelo)
     return modelo
             
     
@@ -185,39 +186,12 @@ def delete_bombilla():
           
         url_delete = url + i
         d1 = requests.delete(url_delete)
-        
-def arc_nombre_luces(datos):
-    
-    file = open("/home/pi/Desktop/Zigbee-python/lista_luces.txt", "a")
-    file.write(datos + os.linesep)
-    file.close()
-    
-    return
 
-def listar_bomb():
-    data_listar = getAPIResult_bombilla()
-    file = open("/home/pi/Desktop/Zigbee-python/lista_luces.txt", "w").close()
-    i=1
-    for key, value in data_listar.items():
-        bomb_names = data_listar[key]['name']
-        bomb_id = data_listar[key]['manufacturername']
-        bomb_model = data_listar[key]['modelid']
-        bomb_version = data_listar[key]['swversion']
-        bomb_tipo = data_listar[key]['type']
-        bomb = "-Sensor "+str(i)+"\nNombre:" +bomb_names + "\nFabricante:" + bomb_id + "\nTipo:" + bomb_tipo +"\nModelo:" + bomb_model + "\nVersión:" + bomb_version + "\n"
-        #print(bomb)
-        i=i+1
-        arc_nombre_luces(bomb)
-        
-    with open("/home/pi/Desktop/Zigbee-python/lista_luces.txt",'r') as file:
-        datos = file.read()
 
-    return datos
-
-#listar_bomb()
 #getModelo_bombilla()
 #getEnvSensors_bombilla()
 #saturacion(0)
+
 #cambiar_color(1,1)
 
 #temperatura(3000)
@@ -225,7 +199,7 @@ def listar_bomb():
 #hue(50000)
 #brillo(0)
 #apagar()
-
+#encender()
 #delete_bombilla()
 #conectar_bombilla()
 #getModelo_bombilla()

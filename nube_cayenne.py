@@ -1,7 +1,6 @@
 #Prueba de la nube -> myDevices.com
 #Librerias
 import paho.mqtt.client as mqtt
-#import time
 from bombilla_ikea import *
 
 #Información sacada diredctamente de la plataforma myDevices
@@ -22,17 +21,10 @@ subscribe_boton = 'v1/' + user + '/things/' + client_id + '/cmd/2'
 publish_slider = 'v1/' + user + '/things/' + client_id + '/data/5' #Barra brillo
 subscribe_slider = 'v1/' + user + '/things/' + client_id + '/cmd/5'
 
-publish_sat = 'v1/' + user + '/things/' + client_id + '/data/6' #Barra saturación
+publish_sat = 'v1/' + user + '/things/' + client_id + '/data/6' #Barra brillo
 subscribe_sat = 'v1/' + user + '/things/' + client_id + '/cmd/6'
 
-publish_temp = 'v1/' + user + '/things/' + client_id + '/data/7' #Barra temperatura
-subscribe_temp = 'v1/' + user + '/things/' + client_id + '/cmd/7'
 
-publish_color = 'v1/' + user + '/things/' + client_id + '/data/8' #Barra color
-subscribe_color = 'v1/' + user + '/things/' + client_id + '/cmd/8'
-
-publish_act = 'v1/' + user + '/things/' + client_id + '/digital/10' #Barra color
-subscribe_act = 'v1/' + user + '/things/' + client_id + '/cmd/10'
 
 def valor_nube(t,h,p,b):
     client.publish(publish_0,t)
@@ -40,12 +32,12 @@ def valor_nube(t,h,p,b):
     client.publish(publish_2,p)
     client.publish(publish_3,b)
 
-def mensagens(client, userdata, msg):
-    #client.publish(publish_boton,1)
+def mensagens(client, userdata, msg): 
     m = msg.topic.split('/')
     p = msg.payload.decode().split(',')
     print(m)
     print(p)
+    
     channel = m[5]
     
     print(p[1])
@@ -56,20 +48,15 @@ def mensagens(client, userdata, msg):
     elif channel == '2':
         if p[1] == '1':
             encender()
-            
+
         else:
             apagar()
             
     elif channel == '6':
         saturacion(int(p[1]))
-        print(p[1])
-    
-    elif channel == '7':
-        temperatura(int(p[1]))
-        
-    elif channel == '8':
-        hue(int(p[1]))
-        
+  
+            
+   # print(p[1])
 #     p[1]=1
      
 #     print(p[1])
@@ -80,19 +67,11 @@ client = mqtt.Client(client_id)
 client.username_pw_set(user, password)
 client.connect(server, port)
 
-
-
 client.on_message = mensagens
 client.subscribe(subscribe_slider)
 client.subscribe(subscribe_boton)
-client.subscribe(subscribe_color)
-client.subscribe(subscribe_temp)
-client.subscribe(subscribe_sat)
-client.subscribe(subscribe_act)
 
 client.loop_start()
-
-
 
 #valor_nube(28.36,40.2,94.1,97)
 
@@ -100,4 +79,5 @@ client.loop_start()
 #     client.publish(publish_0,i)
 #     client.publish(publish_1,i*2.1)
 #     time.sleep(2)
+
 
