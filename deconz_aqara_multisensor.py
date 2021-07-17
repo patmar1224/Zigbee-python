@@ -1,8 +1,6 @@
 import requests 
 from datetime import datetime
 import os
-import time
-
 
 """
 Query deCONZ Zigbee Gateway specificly for AQARA Multi Sensor, which provides
@@ -15,7 +13,7 @@ Query via deCONZ REST API
 ___version___ = 0.3
 
 # General Configuration
-deconzServerIPandPort = '192.168.1.110:80'
+deconzServerIPandPort = '192.168.1.109:80'
 deconzAPIKey = 'CC95679D0E' 
 
 # Static Sensor Information
@@ -106,8 +104,7 @@ def getEnvSensorValues():
         
         #version = data[key]['swversion']
         sensorName = getEnvSensors()
-            
-            
+        
         for i in range(len(getEnvSensors())):
                 
             if dataSensor == sensorName[i] and dataSensorType == aqaraSensorTypeTemperature:
@@ -144,7 +141,7 @@ def getEnvSensorValues():
     
     return temperatura, humedad, presion, bateria
 
-def delete_sensor():
+def id_sensor():
     
     data_delete = getAPIResult()
 
@@ -168,9 +165,14 @@ def delete_sensor():
             elif dataSensor == sensorName[i] and dataSensorType == aqaraSensorTypePressure:
                 id_presion = data_delete[key]['uniqueid']
                 
-    url_delete = url + id_temperatura
-    url_delete2 = url + id_humedad
-    url_delete3 = url + id_presion
+    return id_temperatura, id_humedad, id_presion
+
+def delete_sensor():
+    
+    (t,h,p) = id_sensor()
+    url_delete = url + t
+    url_delete2 = url + h
+    url_delete3 = url + p
     d1 = requests.delete(url_delete)
     d2 = requests.delete(url_delete2)
     d3 = requests.delete(url_delete3)
@@ -207,6 +209,8 @@ def leer_sensor():
         datos = file.read()
     
     return datos
+
+
 #listar_sensor()
 #leer_sensor()
 # print(getModelo())

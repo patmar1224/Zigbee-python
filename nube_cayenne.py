@@ -31,14 +31,12 @@ subscribe_temp = 'v1/' + user + '/things/' + client_id + '/cmd/7'
 publish_color = 'v1/' + user + '/things/' + client_id + '/data/8' #Barra color
 subscribe_color = 'v1/' + user + '/things/' + client_id + '/cmd/8'
 
-publish_act = 'v1/' + user + '/things/' + client_id + '/digital/10' #Barra color
-subscribe_act = 'v1/' + user + '/things/' + client_id + '/cmd/10'
 
 def valor_nube(t,h,p,b):
     client.publish(publish_0,t)
     client.publish(publish_1,h)
     client.publish(publish_2,p)
-    client.publish(publish_3,b)
+    client.publish(publish_3,(b))
 
 def mensagens(client, userdata, msg):
     #client.publish(publish_boton,1)
@@ -69,7 +67,7 @@ def mensagens(client, userdata, msg):
         
     elif channel == '8':
         hue(int(p[1]))
-        
+
 #     p[1]=1
      
 #     print(p[1])
@@ -88,13 +86,8 @@ client.subscribe(subscribe_boton)
 client.subscribe(subscribe_color)
 client.subscribe(subscribe_temp)
 client.subscribe(subscribe_sat)
-client.subscribe(subscribe_act)
 
 client.loop_start()
-
-
-
-#valor_nube(28.36,40.2,94.1,97)
 
 # for i in range(1, 10):
 #     client.publish(publish_0,i)

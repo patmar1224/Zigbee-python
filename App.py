@@ -13,7 +13,7 @@ import numpy as np
 from nube_cayenne import *
 import pandas as pd
 #import qtawesome as qta
-
+#import blynklib
 
 class ejemplo_GUI(QMainWindow):
     def __init__(self):
@@ -324,8 +324,12 @@ class ejemplo_GUI(QMainWindow):
             
     def refresco_auto(self):
         if not self.ui.tiempo_actualizacion_sensor.toPlainText() or self.ui.tiempo_actualizacion_sensor.toPlainText().isdigit() == False or float(self.ui.tiempo_actualizacion_sensor.toPlainText()) == True:
-            print("No se ha metido ningun valor")
-            self.ui.texto_valido.setText("Valor inválido")
+            if int(self.ui.tiempo_actualizacion_sensor.toPlainText()) == 1:
+                self.ui.texto_valido.setText("Número válido")
+                self.ui.timer.start(1000)
+            else:
+                print("No se ha metido ningun valor")
+                self.ui.texto_valido.setText("Valor inválido")
             
         else:
             val_ref=int(self.ui.tiempo_actualizacion_sensor.toPlainText())
@@ -424,7 +428,7 @@ if __name__ == '__main__':
     temp_ant = 0
     hum_ant = 0
     presion_ant = 0
-    App_prueba.show()
+    App_prueba.show()  
     app.exec_()
     #sys.exit()
     

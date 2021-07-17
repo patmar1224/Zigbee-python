@@ -34,7 +34,7 @@ background-color: rgb(48, 48, 48);</string>
      <string notr="true">background-color: rgb(93, 107, 171);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="home">
      <widget class="QPushButton" name="boton_luz">
@@ -1812,7 +1812,7 @@ QPushButton:pressed{
       </property>
       <property name="icon">
        <iconset resource="logo.qrc">
-        <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-reload-thin-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-reload-thin-240.png</iconset>
+        <normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-arrow-68-240.png</normaloff>:/cct/business-and-money-icon-pack-91/iconmonstr-arrow-68-240.png</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="boton_bomb_on">

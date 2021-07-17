@@ -1,20 +1,8 @@
-#from json import loads
-#import urllib.request
-#from urllib import parse
-#from urllib import request
-import json
 import requests 
-from pytz import timezone
 import os
 
-#libreruas para los hilos
-import threading
-import time
-
-
 """
-Query deCONZ Zigbee Gateway specificly for AQARA Multi Sensor, which provides
-temperature, humidity and pressure data.
+Query deCONZ Zigbee Gateway specificly for IKEA TRAFDI.
 
 Query via deCONZ REST API
 
@@ -23,7 +11,7 @@ Query via deCONZ REST API
 ___version___ = 0.3
 
 # General Configuration
-deconzServerIPandPort = '192.168.1.110:80'
+deconzServerIPandPort = '192.168.1.109:80'
 deconzAPIKey = 'CC95679D0E' 
 
 # Static Sensor Information
