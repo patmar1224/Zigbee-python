@@ -42,16 +42,17 @@ def mensagens(client, userdata, msg):
     #client.publish(publish_boton,1)
     m = msg.topic.split('/')
     p = msg.payload.decode().split(',')
-    print(m)
-    print(p)
+
     channel = m[5]
     
     print(p[1])
+    print(channel)
     
     if channel == '5':
         brillo(int(p[1]))
         
     elif channel == '2':
+        print('hola')
         if p[1] == '1':
             encender()
             
@@ -67,7 +68,7 @@ def mensagens(client, userdata, msg):
         
     elif channel == '8':
         hue(int(p[1]))
-
+        
 #     p[1]=1
      
 #     print(p[1])
@@ -78,9 +79,8 @@ client = mqtt.Client(client_id)
 client.username_pw_set(user, password)
 client.connect(server, port)
 
-
-
 client.on_message = mensagens
+
 client.subscribe(subscribe_slider)
 client.subscribe(subscribe_boton)
 client.subscribe(subscribe_color)

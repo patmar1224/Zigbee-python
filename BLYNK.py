@@ -2,12 +2,15 @@ import blynklib
 from deconz_aqara_multisensor import *
 from bombilla_ikea import *
 
+global blynk
+global BLYNK_AUTH
 BLYNK_AUTH = 'Urq9JqZLJxaBKpjRXo1j6E8Va83bG0ec' # insert your Auth Token here
 
-
 # initialize Blynk
+
 blynk = blynklib.Blynk(BLYNK_AUTH)
 #blynk.connect()
+
 
 READ_PRINT_MSG = "[READ_VIRTUAL_PIN_EVENT] Pin: V{}"
 WRITE_EVENT_PRINT_MSG = "[WRITE_VIRTUAL_PIN_EVENT] Pin: V{} Value: '{}'"
@@ -35,7 +38,7 @@ def read_virtual_pin_handler_1(pin):
         blynk.virtual_write(G_T_PIN, t)
         blynk.virtual_write(G_H_PIN, h)
         blynk.virtual_write(G_P_PIN, p)
-        blynk.virtual_write(P_PIN, 0)
+        blynk.virtual_write(P_PIN, p)
     else:
         blynk.virtual_write(C_PIN, 1)
         blynk.virtual_write(pin, 0)
@@ -57,7 +60,7 @@ def write_virtual_pin_handler_0(pin, value):
     blynk.virtual_write(P_PIN, p)
     
 @blynk.handle_event('write V10')
-def write_virtual_pin_handler_0(pin, value):
+def write_virtual_pin_handler_10(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
     print(value)
     if value == ['0']:
@@ -65,8 +68,42 @@ def write_virtual_pin_handler_0(pin, value):
         delete_sensor()
     else:
         conectar_sensor()
+        
+@blynk.handle_event('write V11')
+def write_virtual_pin_handler_11(pin, value):
+    print(WRITE_EVENT_PRINT_MSG.format(pin, value))
+    if value == ['0']:
+        #encender
+        encender()
+    else:
+        #apagar
+        apagar()
+        
+@blynk.handle_event('write V12')
+def write_virtual_pin_handler_12(pin, value):
+    print(WRITE_EVENT_PRINT_MSG.format(pin, value))
+    brillo(int(value[0]))
+
+    
+@blynk.handle_event('write V13')
+def write_virtual_pin_handler_13(pin, value):
+    print(WRITE_EVENT_PRINT_MSG.format(pin, value))
+    hue(int(value[0])*10)
+    
+@blynk.handle_event('write V14')
+def write_virtual_pin_handler_14(pin, value):
+    print(WRITE_EVENT_PRINT_MSG.format(pin, value))
+    
+    saturacion(int(value[0]))
+    
+@blynk.handle_event('write V15')
+def write_virtual_pin_handler_15(pin, value):
+    print(WRITE_EVENT_PRINT_MSG.format(pin, value))
+    temperatura(int(value[0]))
+    
 ###########################################################
 # infinite loop that waits for event
 ###########################################################
-while True:
-    blynk.run()
+def conect_blynk():
+    while True:
+        blynk.run()

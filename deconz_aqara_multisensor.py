@@ -13,7 +13,7 @@ Query via deCONZ REST API
 ___version___ = 0.3
 
 # General Configuration
-deconzServerIPandPort = '192.168.1.109:80'
+deconzServerIPandPort = '192.168.1.108:80'
 deconzAPIKey = 'CC95679D0E' 
 
 # Static Sensor Information
@@ -118,7 +118,7 @@ def getEnvSensorValues():
                 presion = (data[key]['state']['pressure'])/10
     
         
-    hora_app = hora.strftime("%M.%S")
+    hora_app = hora.strftime("%H:%M")
     global nombre_arc
     nombre_arc= hora.strftime("%d-%m-%Y_%H:%M:%S")
     segundos = hora.strftime("%S")
@@ -138,6 +138,8 @@ def getEnvSensorValues():
     print(humed_arc)
     print(presion_arc)
     print(bat_arc)
+    
+    #arc_grafica(str(temperatura)+","+ hora_app)
     
     return temperatura, humedad, presion, bateria
 
@@ -176,6 +178,13 @@ def delete_sensor():
     d1 = requests.delete(url_delete)
     d2 = requests.delete(url_delete2)
     d3 = requests.delete(url_delete3)
+
+def arc_grafica(datos):
+    
+    file = open("/home/pi/Desktop/Zigbee-python/ejemplo.txt", "a")
+    file.write(datos + os.linesep)
+    #file.close()
+    return
 
 def arc_nombre_sensores(datos):
     
@@ -225,4 +234,3 @@ def leer_sensor():
 #getEnvSensorValues()
 #delete_sensor()
 #print(getEnvSensors())
-
