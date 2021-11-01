@@ -11,6 +11,7 @@ import datetime
 import matplotlib.dates as mdates
 import numpy as np
 from nube_cayenne import *
+from BLYNK import *
 from thingspeak import *
 import threading
 #import qtawesome as qta
@@ -55,6 +56,8 @@ class ejemplo_GUI(QMainWindow):
             saturacion(satur)
             hue(col)
             brillo(bril)
+            print(on_bomb)
+            thingspeak_datos(0,0,0,on_bomb,0)
             #temperatura(ct)                
         
         #Valor de la barra del brillo en modo color
@@ -190,9 +193,15 @@ class ejemplo_GUI(QMainWindow):
     
     def encender_bombilla(self):
         encender()
+        (satur, bril, col, ct, mod, on_bomb) = getEnvSensorValues_bombilla()
+        print(on_bomb)
+        thingspeak_datos(0,0,0,on_bomb,0)
         
     def apagar_bombilla(self):
         apagar()
+        (satur, bril, col, ct, mod, on_bomb) = getEnvSensorValues_bombilla()
+        print(on_bomb)
+        thingspeak_datos(0,0,0,on_bomb,0)
         
     def valor_temp(self):
         value = self.ui.temp_slider.value()
@@ -260,7 +269,7 @@ class ejemplo_GUI(QMainWindow):
             
             #Valores de la nube
             valor_nube(t,h,p,b)
-            thingspeak_datos(t,h,p)
+            thingspeak_datos(t,h,p,0,1)
             
             #Escena
             if MedidaAutomatica == True:
@@ -417,7 +426,7 @@ class Listar_dispositivos(QDialog):
         self.list_sensores.setText(listar_sensor())
         self.list_bomb.setText(listar_bomb())
     
-def prueba():
+def blynk_hilo():
     conect_blynk()
         
 if __name__ == '__main__':
@@ -433,7 +442,7 @@ if __name__ == '__main__':
     hum_ant = 0
     presion_ant = 0
     
-    hilo = threading.Thread(target=prueba)
+    hilo = threading.Thread(target=blynk_hilo)
     hilo.start()
     App_prueba.show()  
     app.exec_()

@@ -55,9 +55,10 @@ def mensagens(client, userdata, msg):
         print('hola')
         if p[1] == '1':
             encender()
-            
+            thingspeak_datos(0,0,0,True,0)
         else:
             apagar()
+            thingspeak_datos(0,0,0,False,0)
             
     elif channel == '6':
         saturacion(int(p[1]))

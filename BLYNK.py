@@ -1,9 +1,11 @@
 import blynklib
 from deconz_aqara_multisensor import *
 from bombilla_ikea import *
+from thingspeak import *
+from nube_cayenne import *
 
-global blynk
-global BLYNK_AUTH
+# global blynk
+# global BLYNK_AUTH
 BLYNK_AUTH = 'Urq9JqZLJxaBKpjRXo1j6E8Va83bG0ec' # insert your Auth Token here
 
 # initialize Blynk
@@ -39,6 +41,7 @@ def read_virtual_pin_handler_1(pin):
         blynk.virtual_write(G_H_PIN, h)
         blynk.virtual_write(G_P_PIN, p)
         blynk.virtual_write(P_PIN, p)
+        
     else:
         blynk.virtual_write(C_PIN, 1)
         blynk.virtual_write(pin, 0)
@@ -51,13 +54,17 @@ def read_virtual_pin_handler_1(pin):
 @blynk.handle_event('write V0')
 def write_virtual_pin_handler_0(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
-    (t,h,p,b) = getEnvSensorValues()
-    blynk.virtual_write(T_PIN, t)
-    blynk.virtual_write(H_PIN, h)
-    blynk.virtual_write(G_T_PIN, t)
-    blynk.virtual_write(G_H_PIN, h)
-    blynk.virtual_write(G_P_PIN, p)
-    blynk.virtual_write(P_PIN, p)
+    if value == ['1']:
+        (t,h,p,b) = getEnvSensorValues()
+        valor_nube(t,h,p,b)
+        thingspeak_datos(t,h,p,0,1)
+        blynk.virtual_write(T_PIN, t)
+        blynk.virtual_write(H_PIN, h)
+        blynk.virtual_write(G_T_PIN, t)
+        blynk.virtual_write(G_H_PIN, h)
+        blynk.virtual_write(G_P_PIN, p)
+        blynk.virtual_write(P_PIN, p)
+    
     
 @blynk.handle_event('write V10')
 def write_virtual_pin_handler_10(pin, value):
@@ -72,12 +79,15 @@ def write_virtual_pin_handler_10(pin, value):
 @blynk.handle_event('write V11')
 def write_virtual_pin_handler_11(pin, value):
     print(WRITE_EVENT_PRINT_MSG.format(pin, value))
+        
     if value == ['0']:
         #encender
         encender()
+        thingspeak_datos(0,0,0,True,0)
     else:
         #apagar
         apagar()
+        thingspeak_datos(0,0,0,False,0)
         
 @blynk.handle_event('write V12')
 def write_virtual_pin_handler_12(pin, value):

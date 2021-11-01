@@ -3,7 +3,7 @@ Nombre:Configuration tool 1
 Fabricante:dresden elektronik
 Tipo:Configuration tool
 Modelo:ConBee II
-Versión:0x26660700
+Versión:0x00000000
 
 -Sensor 2
 Nombre:Extended color light 2
