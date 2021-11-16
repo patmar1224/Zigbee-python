@@ -88,5 +88,17 @@ La aplicación se ha desarrollado con QtDesigner. Para instalar el entorno gráf
 	pip install pyinstaller 
 
 # MyDevice cayenne
-MyDevice.com es una plataforma dondese subiran los datos de nuestra app en la nube, a la vez que podremos controlar el sensor y la bombilla desde ahí. Primero nos debemos de crear una cuenta en myDevices.com y desde ahí seguir todos los pasos. El URL de la página es el siguiente:
+MyDevice.com es una plataforma donde se subirán los datos de nuestra app en la nube, a la vez que podremos controlar el sensor y la bombilla desde ahí. Primero nos debemos de crear una cuenta en myDevices.com y desde ahí seguir todos los pasos. El URL de la página es el siguiente:
 https://accounts.mydevices.com/auth/realms/cayenne/protocol/openid-connect/auth?response_type=code&scope=email+profile&client_id=cayenne-web-app&state=5Os6WlKS3imyU0xcCTtRBT4CiLtndkUf2O7QUpFo&redirect_uri=https%3A%2F%2Fcayenne.mydevices.com%2Fauth%2Fcallback
+
+Además de los pasos anteriores se debe de instalar la siguiente librería con el siguiente comando:
+	
+	pip3 install paho-mqtt
+
+# BLYNK
+Blynk es una nube desde la que se manejarán los dispositivos. Para ellos se deberá de instalar la siguiente librería:
+
+	pip3 install blynklib
+	
+# THINGSPEAK
+ThingSpeak es una plataforma donde se pueden visualizar los datos del sensor, además de saber si la bombilla esta encendida y apagada. Solo hará falta añadir la librería requests, anteriormente añadida.
