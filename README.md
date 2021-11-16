@@ -1,7 +1,7 @@
 # Zigbee-python
 Conexión del sensor Xiaomi Aqara Multi sensor WSDCGQ11LM (sensor de temperatura, humedad y presión atmosférica) y bombilla IKEA TRÅDFRI 470 lm E14 (bombilla con luz de colores, luz cálida y fría). Esta conexión se realizará en lenguaje Python y además se utilizará un USB universal Zigbee gateway, ConBee 2.
 
-# Como instalar conbee II (deconz) en la raspberry pi
+# Como instalar Conbee II (deconz) en la Raspberry Pi
 -Primero se deben de establecer los derechos de acceso USB del usuario:
 
 	sudo gpasswd -a $USER dialout
