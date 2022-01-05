@@ -391,6 +391,41 @@ class Ui_MainWindow(object):
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
+        self.graficar = QtWidgets.QPushButton(self.grafica_sensor)
+        self.graficar.setGeometry(QtCore.QRect(10, 540, 111, 61))
+        font = QtGui.QFont()
+        font.setFamily("Bitstream Vera Sans Mono")
+        font.setBold(True)
+        font.setWeight(75)
+        self.graficar.setFont(font)
+        self.graficar.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.graficar.setStyleSheet("QPushButton{\n"
+"    background-color: rgb(170, 170, 255);\n"
+"    border:none;\n"
+"    padding-top: 3px;\n"
+"    border-left: 3px solid rgb(62, 72, 115);\n"
+"    border-bottom: 4px solid rgb(62, 72, 115);\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    background-color: rgb(139, 139, 209);\n"
+"    border:none;\n"
+"    border-left: 3px solid rgb(62, 72, 115);\n"
+"    border-bottom: 6px solid rgb(62, 72, 115);\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color: rgb(139, 139, 209);\n"
+"    border:none;\n"
+"    border-left: 3px solid rgb(62, 72, 115);\n"
+"    border-top: 4px solid rgb(62, 72, 115);\n"
+"    padding-top: -3px;\n"
+"    border-bottom: none;\n"
+"}")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap(":/cct/business-and-money-icon-pack-91/grafico-de-lineas.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.graficar.setIcon(icon4)
+        self.graficar.setObjectName("graficar")
         self.tabWidget.addTab(self.grafica_sensor, "")
         self.tabla_sensor = QtWidgets.QWidget()
         self.tabla_sensor.setMouseTracking(False)
@@ -421,9 +456,9 @@ class Ui_MainWindow(object):
 "    padding-top: -3px;\n"
 "    border-bottom: none;\n"
 "}")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(":/cct/business-and-money-icon-pack-91/iconmonstr-trash-can-30-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.boton_borrar_tabla.setIcon(icon4)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(":/cct/business-and-money-icon-pack-91/iconmonstr-trash-can-30-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.boton_borrar_tabla.setIcon(icon5)
         self.boton_borrar_tabla.setObjectName("boton_borrar_tabla")
         self.tabla_sensor_datos = QtWidgets.QTableWidget(self.tabla_sensor)
         self.tabla_sensor_datos.setGeometry(QtCore.QRect(30, 110, 781, 491))
@@ -581,9 +616,9 @@ class Ui_MainWindow(object):
 "    padding-top: -3px;\n"
 "    border-bottom: none;\n"
 "}")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/cct/business-and-money-icon-pack-91/iconmonstr-arrow-68-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.boton_atras_sensor.setIcon(icon5)
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(":/cct/business-and-money-icon-pack-91/iconmonstr-arrow-68-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.boton_atras_sensor.setIcon(icon6)
         self.boton_atras_sensor.setObjectName("boton_atras_sensor")
         self.boton_anadir_sensor = QtWidgets.QPushButton(self.sensor)
         self.boton_anadir_sensor.setGeometry(QtCore.QRect(20, 470, 231, 71))
@@ -616,9 +651,9 @@ class Ui_MainWindow(object):
 "    padding-top: -3px;\n"
 "    border-bottom: none;\n"
 "}")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(":/cct/business-and-money-icon-pack-91/iconmonstr-radio-tower-12-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.boton_anadir_sensor.setIcon(icon6)
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap(":/cct/business-and-money-icon-pack-91/iconmonstr-radio-tower-12-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.boton_anadir_sensor.setIcon(icon7)
         self.boton_anadir_sensor.setObjectName("boton_anadir_sensor")
         self.boton_borrar_sensor = QtWidgets.QPushButton(self.sensor)
         self.boton_borrar_sensor.setGeometry(QtCore.QRect(20, 570, 231, 71))
@@ -651,7 +686,7 @@ class Ui_MainWindow(object):
 "    padding-top: -3px;\n"
 "    border-bottom: none;\n"
 "}")
-        self.boton_borrar_sensor.setIcon(icon4)
+        self.boton_borrar_sensor.setIcon(icon5)
         self.boton_borrar_sensor.setObjectName("boton_borrar_sensor")
         self.frame_16 = QtWidgets.QFrame(self.sensor)
         self.frame_16.setGeometry(QtCore.QRect(10, 160, 241, 231))
@@ -832,7 +867,7 @@ class Ui_MainWindow(object):
 "    padding-top: -3px;\n"
 "    border-bottom: none;\n"
 "}")
-        self.boton_atras_luz.setIcon(icon5)
+        self.boton_atras_luz.setIcon(icon6)
         self.boton_atras_luz.setObjectName("boton_atras_luz")
         self.boton_bomb_on = QtWidgets.QPushButton(self.bombilla)
         self.boton_bomb_on.setGeometry(QtCore.QRect(20, 360, 110, 51))
@@ -900,9 +935,9 @@ class Ui_MainWindow(object):
 "    padding-top: -3px;\n"
 "    border-bottom: none;\n"
 "}")
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap(":/cct/business-and-money-icon-pack-91/iconmonstr-idea-1-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.boton_bomb_off.setIcon(icon7)
+        icon8 = QtGui.QIcon()
+        icon8.addPixmap(QtGui.QPixmap(":/cct/business-and-money-icon-pack-91/iconmonstr-idea-1-240.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.boton_bomb_off.setIcon(icon8)
         self.boton_bomb_off.setObjectName("boton_bomb_off")
         self.boton_anadir_bomb = QtWidgets.QPushButton(self.bombilla)
         self.boton_anadir_bomb.setGeometry(QtCore.QRect(20, 470, 231, 71))
@@ -935,7 +970,7 @@ class Ui_MainWindow(object):
 "    padding-top: -3px;\n"
 "    border-bottom: none;\n"
 "}")
-        self.boton_anadir_bomb.setIcon(icon6)
+        self.boton_anadir_bomb.setIcon(icon7)
         self.boton_anadir_bomb.setObjectName("boton_anadir_bomb")
         self.boton_borrar_bomb = QtWidgets.QPushButton(self.bombilla)
         self.boton_borrar_bomb.setGeometry(QtCore.QRect(20, 570, 231, 71))
@@ -967,7 +1002,7 @@ class Ui_MainWindow(object):
 "    padding-top: -3px;\n"
 "    border-bottom: none;\n"
 "}")
-        self.boton_borrar_bomb.setIcon(icon4)
+        self.boton_borrar_bomb.setIcon(icon5)
         self.boton_borrar_bomb.setObjectName("boton_borrar_bomb")
         self.frame_17 = QtWidgets.QFrame(self.bombilla)
         self.frame_17.setGeometry(QtCore.QRect(50, 90, 181, 221))
@@ -979,7 +1014,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_2.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -1003,6 +1038,8 @@ class Ui_MainWindow(object):
         self.boton_actualizar_datos_sensor_auto.setText(_translate("MainWindow", "OK"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.datos_sensor), _translate("MainWindow", "Datos"))
         self.tabWidget.setTabToolTip(self.tabWidget.indexOf(self.datos_sensor), _translate("MainWindow", "Ver datos"))
+        self.graficar.setText(_translate("MainWindow", "MOSTRAR \n"
+"GRÁFICA"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.grafica_sensor), _translate("MainWindow", "Gráfica"))
         self.tabWidget.setTabToolTip(self.tabWidget.indexOf(self.grafica_sensor), _translate("MainWindow", "Ver gráfica"))
         self.boton_borrar_tabla.setText(_translate("MainWindow", "Borrar"))

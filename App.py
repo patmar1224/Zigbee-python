@@ -14,6 +14,8 @@ from nube_cayenne import *
 from BLYNK import *
 from thingspeak import *
 import threading
+import pandas as pd
+from matplotlib import style
 #import qtawesome as qta
 from BLYNK import conect_blynk
 
@@ -46,6 +48,7 @@ class ejemplo_GUI(QMainWindow):
         self.ui.boton_listar.clicked.connect(self.listar)
         self.ui.checkBox_escena.stateChanged.connect(self.funcion_ModoAuto)
         self.ui.Spinbox_escena.editingFinished.connect(self.funcion_ModoAuto)
+        self.ui.graficar.clicked.connect(self.grafica_precision)
         self.ui.pantalla_conectar = Pantalla_conectar()
         self.ui.bombilla_conectar = Bombilla_conectar()
         self.ui.listar_dispositivos = Listar_dispositivos()
@@ -148,8 +151,9 @@ class ejemplo_GUI(QMainWindow):
         self.ejes3=self.figura.add_subplot(313)
         
         #Formato del eje X en horas
-        #Gráfica humedad
         xformater = mdates.DateFormatter('%H:%M')
+        
+        #Gráfica humedad
         self.ejes.xaxis.set_major_formatter(xformater)
         self.ejes.set_xlim((min(dates_graf) - datetime.timedelta(hours=1),max(dates_graf) + datetime.timedelta(hours=1)))
         self.ejes.set_ylim([0, 100])
@@ -180,7 +184,29 @@ class ejemplo_GUI(QMainWindow):
             
         else:
             MedidaAutomatica=False
-                
+    
+    def grafica_precision(self):
+        print("Grafica")
+#         fig=plt.figure()
+#         ax1 = fig.add_subplot(211)
+#         ax2 = fig.add_subplot(212)
+#         df = pd.read_csv("/home/pi/Desktop/Zigbee-python/datos_grafica.csv")
+#         df['Fecha'] = pd.to_datetime(df.Fecha.to_numpy(), dayfirst=True)
+#         ax1.clear()
+#         ax1.set(ylabel='Temperatura (ºC)')
+#         #ax1.set_title('Temperatura')
+#         ax2.clear()
+#         #ax2.set_title('Humedad')
+#         ax2.set(ylabel='Humedad (%)')
+#         ax1.plot(df['Fecha'].to_numpy(), df['Temperatura'].to_numpy())
+#         ax2.plot(df['Fecha'].to_numpy(), df['Humedad'].to_numpy())
+#         #my_plot = df.plot("Date", "Temperatura", kind="line", marker ='o')
+#         plt.xticks(rotation=20)
+#         ax1.tick_params(axis="x", labelrotation = 10)
+        #ani=animation.FuncAnimation(fig, animate, frames=1, interval=10, repeat=False)
+        #hilo_graf=threading.Thread(target=plt.show())
+        hilo_graf=threading.Thread(target=graf_ind)
+        hilo_graf.start()
         
     def valor_blanco_escena(self):
         value = self.ui.brillo_blanco_slider_escena.value()
@@ -428,6 +454,31 @@ class Listar_dispositivos(QDialog):
     
 def blynk_hilo():
     conect_blynk()
+    
+    
+def graf_ind():
+    style.use('bmh')
+    fig=plt.figure()
+    ax1 = fig.add_subplot(311)
+    ax2 = fig.add_subplot(312)
+    ax3 = fig.add_subplot(313)
+    
+    df = pd.read_csv("/home/pi/Desktop/Zigbee-python/datos_grafica.csv")
+    df['Fecha'] = pd.to_datetime(df.Fecha.to_numpy(), dayfirst=True)
+    ax1.clear()
+    ax1.set(ylabel='Temperatura (ºC)')
+    ax1.set_title('Datos del sensor')
+    ax2.clear()
+    ax2.set(ylabel='Humedad (%)')
+    ax3.clear()
+    ax3.set(ylabel='Presión (kPa)')
+    ax1.plot(df['Fecha'].to_numpy(), df['Temperatura'].to_numpy(), "r-")
+    ax2.plot(df['Fecha'].to_numpy(), df['Humedad'].to_numpy(),"b-")
+    ax3.plot(df['Fecha'].to_numpy(), df['Presion'].to_numpy(),"g-")
+    #my_plot = df.plot("Date", "Temperatura", kind="line", marker ='o')
+    plt.xticks(rotation=20)
+    #ax1.tick_params(axis="x", labelrotation = 10)
+    plt.show()
         
 if __name__ == '__main__':
     app=QApplication(sys.argv) #Para abrir la aplicación
@@ -444,6 +495,9 @@ if __name__ == '__main__':
     
     hilo = threading.Thread(target=blynk_hilo)
     hilo.start()
+    
+    #hilo_graf=threading.Thread(target=graf_ind)
+    
     App_prueba.show()  
     app.exec_()
     #sys.exit()

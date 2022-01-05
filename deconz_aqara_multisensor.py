@@ -1,6 +1,7 @@
 import requests 
 from datetime import datetime
 import os
+from csv import writer
 
 """
 Query deCONZ Zigbee Gateway specificly for AQARA Multi Sensor, which provides
@@ -13,7 +14,7 @@ Query via deCONZ REST API
 ___version___ = 0.3
 
 # General Configuration
-deconzServerIPandPort = '192.168.1.108:80'
+deconzServerIPandPort = '192.168.1.109:80'
 deconzAPIKey = 'CC95679D0E' 
 
 # Static Sensor Information
@@ -117,6 +118,11 @@ def getEnvSensorValues():
             elif dataSensor == sensorName[i] and dataSensorType == aqaraSensorTypePressure:
                 presion = (data[key]['state']['pressure'])/10
     
+    list=[(str(hora.strftime('%d/%m/%Y')) + " "+str(hora.strftime("%H:%M:%S"))), temperatura, humedad, presion]
+    with open('/home/pi/Desktop/Zigbee-python/datos_grafica.csv', 'a', newline='') as f_object:  
+        writer_object = writer(f_object)
+        writer_object.writerow(list)  
+        f_object.close()
         
     hora_app = hora.strftime("%H:%M")
     global nombre_arc
