@@ -6,8 +6,8 @@ from PyQt5.QtCore import QTimer
 from App_GUI import Ui_MainWindow
 from deconz_aqara_multisensor import *
 from bombilla_ikea import *
-from datetime import datetime
-import datetime
+from datetime import datetime, timedelta
+#import datetime
 import matplotlib.dates as mdates
 import numpy as np
 from nube_cayenne import *
@@ -16,10 +16,8 @@ from thingspeak import *
 import threading
 import pandas as pd
 from matplotlib import style
-#import qtawesome as qta
+import matplotlib.pyplot as plt
 from BLYNK import conect_blynk
-
-from grafica_sensor import *
 
 class ejemplo_GUI(QMainWindow):
     def __init__(self):
@@ -143,7 +141,7 @@ class ejemplo_GUI(QMainWindow):
         
         #Valores del eje X en horas
         x = ["00:00", "02:00", "04:00", "06:00", "08:00", "10:00", "12:00","14:00", "16:00", "18:00", "20:00", "22:00", "23:59"]
-        dates_graf = [datetime.datetime.strptime(h, "%H:%M") for h in x]
+        dates_graf = [datetime.strptime(h, "%H:%M") for h in x]
         
         #Añadir las graficas que quiero
         self.ejes=self.figura.add_subplot(312)
@@ -155,14 +153,14 @@ class ejemplo_GUI(QMainWindow):
         
         #Gráfica humedad
         self.ejes.xaxis.set_major_formatter(xformater)
-        self.ejes.set_xlim((min(dates_graf) - datetime.timedelta(hours=1),max(dates_graf) + datetime.timedelta(hours=1)))
+        self.ejes.set_xlim((min(dates_graf) - timedelta(hours=1),max(dates_graf) +  timedelta(hours=1)))
         self.ejes.set_ylim([0, 100])
         self.ejes.set(ylabel='Humedad(%)')
         self.ejes.grid()
         
         #Gráfica de temperatura
         self.ejes2.xaxis.set_major_formatter(xformater)
-        self.ejes2.set_xlim((min(dates_graf) - datetime.timedelta(hours=1),max(dates_graf) + datetime.timedelta(hours=1)))
+        self.ejes2.set_xlim((min(dates_graf) - timedelta(hours=1),max(dates_graf) +  timedelta(hours=1)))
         self.ejes2.set_ylim([-20,50])
         self.ejes2.set(title='Datos del sensor')
         self.ejes2.set(ylabel='Temperatura(°C)')
@@ -170,7 +168,7 @@ class ejemplo_GUI(QMainWindow):
         
         #Gráfica de presión
         self.ejes3.xaxis.set_major_formatter(xformater)
-        self.ejes3.set_xlim((min(dates_graf) - datetime.timedelta(hours=1),max(dates_graf) + datetime.timedelta(hours=1)))
+        self.ejes3.set_xlim((min(dates_graf) - timedelta(hours=1),max(dates_graf) +  timedelta(hours=1)))
         self.ejes3.set_ylim([30,110])
         self.ejes3.set(ylabel='Presión (kPa)')
         self.ejes3.set(xlabel='Hora')
@@ -309,7 +307,7 @@ class ejemplo_GUI(QMainWindow):
 #                     apagar()
             #Listar datos en la tabla 
             self.ui.array=[]
-            self.ui.array.append((datetime.datetime.now().strftime("%d-%m-%Y"),datetime.datetime.now().strftime("%H:%M:%S"), str(t), str(h), str(p), str(b)))
+            self.ui.array.append((datetime.now().strftime("%d-%m-%Y"),datetime.now().strftime("%H:%M:%S"), str(t), str(h), str(p), str(b)))
             
             file = open("/home/pi/Desktop/Zigbee-python/datos_tabla.txt", "a")
             np.savetxt(file, self.ui.array, delimiter = " ", fmt = "%s", newline = os.linesep)
@@ -325,8 +323,8 @@ class ejemplo_GUI(QMainWindow):
                 fila+=1
                 
             #Graficar datos
-            pr = [(datetime.datetime.now().strftime("%H:%M"))]
-            x = [datetime.datetime.strptime(h, "%H:%M") for h in pr]
+            pr = [(datetime.now().strftime("%H:%M"))]
+            x = [datetime.strptime(h, "%H:%M") for h in pr]
             
             if contador == 0:
                 self.ejes.scatter(x,h, c='blue', marker="X")
@@ -476,8 +474,11 @@ def graf_ind():
     ax2.plot(df['Fecha'].to_numpy(), df['Humedad'].to_numpy(),"b-")
     ax3.plot(df['Fecha'].to_numpy(), df['Presion'].to_numpy(),"g-")
     #my_plot = df.plot("Date", "Temperatura", kind="line", marker ='o')
-    plt.xticks(rotation=20)
-    #ax1.tick_params(axis="x", labelrotation = 10)
+    #plt.xticks(rotation=20)
+    ax1.tick_params(axis="x", labelrotation = 10)
+    ax2.tick_params(axis="x", labelrotation = 10)
+    ax3.tick_params(axis="x", labelrotation = 10)
+    
     plt.show()
         
 if __name__ == '__main__':
